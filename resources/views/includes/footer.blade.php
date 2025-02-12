@@ -1,97 +1,92 @@
- <!--footer starts from here-->
-    <footer class="footer">
-        <div class="container bottom_border">
-            <div class="row">
-               <div class="col-lg-3 col-md-6 col-sm-6 col">
-					<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
-					<!--headin5_amrc-->
-					<p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-					<p><i class="fa fa-location-arrow"></i> New Achimota, Accra - Ghana. </p>
-					<p><i class="fa fa-phone"></i> (+233) 55 340 0073 / 24 475 8130 / 243522962 </p>
-					<p><i class="fa fa fa-envelope"></i> makoinefarmsltd@gmail.com </p>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6 col">
-					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
-					<!--headin5_amrc ends here-->
-					<ul class="footer_ul2_amrc">
-						<li>
-							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-							<p>Lorem Ipsum is simply dummy printing...<a href="#">https://www.lipsum.com/</a></p>
-						</li>
-						<li>
-							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-							<p>Lorem Ipsum is simply dummy printing...<a href="#">https://www.lipsum.com/</a></p>
-						</li>
-						<li>
-							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-							<p>Lorem Ipsum is simply dummy printing...<a href="#">https://www.lipsum.com/</a></p>
-						</li>
-					</ul>
-					<!--footer_ul2_amrc ends here-->
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6">
-					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-					<!--headin5_amrc-->
-					<ul class="footer_ul_amrc">
-						<li><a href="#">Default Version</a></li>
-						<li><a href="#">Boxed Version</a></li>
-						<li><a href="#">Our Team </a></li>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Our Services</a></li>
-						<li><a href="#">Get In Touch</a></li>
-					</ul>
-					<!--footer_ul_amrc ends here-->
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 ">
-					<h5 class="headin5_amrc col_white_amrc pt2">Recent posts</h5>
-					<!--headin5_amrc-->
-					<ul class="footer_ul_amrc">
-						<li class="media">
-							<div class="media-left">
-								<img class="img-fluid" src="assets/images/post-img-01.jpg" alt="" />
-							</div>
-							<div class="media-body">
-								<p>How to find best dog food?</p>
-								<span>22 Sep 2018</span>
-							</div>
-						</li>
-						<li class="media">
-							<div class="media-left">
-								<img class="img-fluid" src="assets/images/post-img-02.jpg" alt="" />
-							</div>
-							<div class="media-body">
-								<p>How to find best dog food?</p>
-								<span>34 Sep 2018</span>
-							</div>
-						</li>
-						<li class="media">
-							<div class="media-left">
-								<img class="img-fluid" src="assets/images/post-img-03.jpg" alt="" />
-							</div>
-							<div class="media-body">
-								<p>How to find best dog food?</p>
-								<span>30 Sep 2018</span>
-							</div>
-						</li>
-					</ul>
-					<!--footer_ul_amrc ends here-->
-				</div>
-			</div>
-		</div>
-        <div class="container">
-            <div class="footer-logo">
-				<a href="#"><img style="width:5%;" src="assets/images/agric-logo.jpg" alt="logo" /></a>
-			</div>
-            <!--foote_bottom_ul_amrc ends here-->
-            {{-- <p class="copyright text-center">All Rights Reserved. &copy; 2018 <a href="#">N & LW Lawn Care</a> Design By : 
-				<a href="https://html.design/">Devlog Gh</a>
-            </p> --}}
-            <ul class="social_footer_ul">
-				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-				{{-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fab fa-linkedin"></i></a></li> --}}
-				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+<footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">AgriCulture</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
             </ul>
-            <!--social_footer_ul ends here-->
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Product Management</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><a href="#">Molestiae accusamus iure</a></li>
+              <li><a href="#">Excepturi dignissimos</a></li>
+              <li><a href="#">Suscipit distinctio</a></li>
+              <li><a href="#">Dilecta</a></li>
+              <li><a href="#">Sit quas consectetur</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><a href="#">Ipsam</a></li>
+              <li><a href="#">Laudantium dolorum</a></li>
+              <li><a href="#">Dinera</a></li>
+              <li><a href="#">Trodelas</a></li>
+              <li><a href="#">Flexo</a></li>
+            </ul>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
