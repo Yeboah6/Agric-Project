@@ -36,7 +36,7 @@ Route::get('/view-details/{id}', [MainController::class, 'viewDetails']) -> name
 Route::get('/edit-post/{id}', [MainController::class, 'editPost']) -> name('edit-post');
 Route::post('/edit-post/{id}', [MainController::class, 'saveEditPost']) -> name('edit-post');
 
-Route::get('/customers', [MainController::class, 'customer']) -> name('customers');
+Route::get('/customers', [MainController::class, 'customer']) -> name('customers') -> middleware('isLoggedIn');
 
 Route::post('/subscribe', [MainController::class, 'subscribe']) -> name('subscribe');
 

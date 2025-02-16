@@ -56,20 +56,18 @@
                                 </thead>
                                 <tbody>
                                     
-                                        {{-- @foreach ($blogs as $blog)
+                                        @foreach ($customers as $customer)
                                             <tr>
-                                                <td>{{ $blog -> blog_id}}</td>
-                                                <td style="text-align: center"><img src="{{ asset('../uploads/blog-images/'.$blog -> image) }}" alt="Applicant_image" style="border-radius:20px;height:60px;"></td>
-                                                <td>{{ $blog -> author}}</td>
-                                                <td>{{ $blog -> title}}</td>
-                                                <td>{{ \Illuminate\Support\Str::limit($blog->message, 55, '...') }}</td>
+                                                <td>{{ $customer -> id}}</td>
+                                                <td>{{ $customer -> name}}</td>
+                                                <td>{{ $customer -> email}}</td>
                                                 <td>
-                                                    <a href="{{ url ('/view-details/'.$blog -> id)}}" class="btn btn-warning btn-sm">View</a>
-                                                    <a href="{{ url ('/edit-post/'.$blog -> id)}}" class="btn btn-info btn-sm">Edit</a>
-                                                    <a href="{{ url ('/delete-post/'.$blog -> id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="{{ url ('/view-details/'.$customer -> id)}}" class="btn btn-warning btn-sm">View</a>
+                                                    <a href="{{ url ('/edit-post/'.$customer -> id)}}" class="btn btn-info btn-sm">Edit</a>
+                                                    <a href="{{ url ('/delete-post/'.$customer -> id)}}" class="btn btn-danger btn-sm">Delete</a>
                                                 </td>
                                             </tr>
-                                        @endforeach --}}
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>

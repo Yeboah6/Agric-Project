@@ -194,7 +194,9 @@ class MainController extends Controller
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
 
-        return view('pages.customers', compact('data'));
+        $customers = Customer::all();
+
+        return view('pages.customers', compact('data', 'customers'));
     }
 
     public function subscribe(Request $request) {
