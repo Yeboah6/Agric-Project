@@ -3,7 +3,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="AgriCulture">
+        <img src="../assets/img/agric-logo.jpg" alt="AgriCulture" >
         <!-- <h1 class="sitename">AgriCulture</h1>  -->
       </a>
 
@@ -13,22 +13,11 @@
           <li><a href="about">About Us</a></li>
           <li><a href="services">Our Services</a></li>
           <li><a href="testimonials">Testimonials</a></li>
-          <li><a href="blog">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          {{-- <li><a href="blog">Blog</a></li> --}}
+          <li class="dropdown"><a href="#"><span>Blogs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="login">Add Post</a></li>
             </ul>
           </li>
           <li><a href="contact">Contact</a></li>

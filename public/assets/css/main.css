@@ -235,7 +235,8 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 32px;
+  /* max-height: 32px; */
+  width: 9%;
   margin-right: 8px;
 }
 
@@ -1334,17 +1335,17 @@ section,
   border-radius: 0;
 }
 
-.call-to-action .content .form-subscribe input[type=email] {
+/* .call-to-action .content .form-subscribe input[type=email] {
   height: 63px !important;
   color: var(--default-color);
-}
+} */
 
-.call-to-action .content .form-subscribe input[type=email]:focus {
+.call-to-action .content .form-subscribe input[type=email], input[type=text]:focus {
   box-shadow: none;
 }
 
-.call-to-action .content .form-subscribe input[type=email]::placeholder {
-  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
+.call-to-action .content .form-subscribe button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
 
 .call-to-action .content .loading,

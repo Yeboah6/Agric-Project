@@ -4,25 +4,25 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">AgriCulture</span>
+            <a href="/" class="logo d-flex align-items-center">
+              <span class="sitename">Makoine Foods and Farms</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
+              <p>New Achimota, Accra</p>
+              <p>P.O. Box 307, Abeka Lapaz-Accra</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+233 55 340 0073 / +233 24 475 8130 </span></p>
+              <p><strong>Email:</strong> <span>makoinefarmsltd@gmail.com</span></p>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About us</a></li>
+              <li><a href="services">Services</a></li>
+              <li><a href="testimonials">Testimonials</a></li>
+              <li><a href="contact">Contact</a></li>
             </ul>
           </div>
 
@@ -75,15 +75,15 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+            {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a> --}}
           </div>
         </div>
 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
+          {{-- <a href=""><i class="bi bi-twitter-x"></i></a> --}}
           <a href=""><i class="bi bi-facebook"></i></a>
           <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
+          {{-- <a href=""><i class="bi bi-linkedin"></i></a> --}}
         </div>
 
       </div>
