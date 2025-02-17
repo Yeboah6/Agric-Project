@@ -10,7 +10,6 @@
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(../assets/img/image31.jpg);">
       <div class="container position-relative">
         <h1 style="font-size: 5rem;">BLOG DETAILS</h1>
-        {{-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> --}}
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>

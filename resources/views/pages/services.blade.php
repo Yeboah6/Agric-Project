@@ -142,9 +142,13 @@
       <div class="content">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <img src="assets/img/image17.jpg" alt="Image " class="img-fluid img-overlap" data-aos="zoom-out">
+              <div class="col-lg-6 mb-4 mb-lg-0">
+                <video width="620" height="240" controls style="margin-left: -80px;">
+                  <source src="assets/img/video11.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
             </div>
+            
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <h3 class="content-subtitle text-white opacity-50">Why Choose Us</h3>
               <h2 class="content-title mb-4">
