@@ -7,7 +7,7 @@
             <div class="col-lg-6">
               <h3>Subscribe To Our Newsletter</h3>
               <p class="opacity-50">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                To get our monthly newsletters
               </p>
             </div>
             <div class="col-lg-6">

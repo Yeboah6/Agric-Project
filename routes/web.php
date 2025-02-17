@@ -40,3 +40,4 @@ Route::get('/customers', [MainController::class, 'customer']) -> name('customers
 
 Route::post('/subscribe', [MainController::class, 'subscribe']) -> name('subscribe');
 
+Route::get('/send-email', [MainController::class, 'sendEmailNotification']) -> name('send-email');

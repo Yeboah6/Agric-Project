@@ -11,7 +11,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="Phoenixcoded" />
     <!-- Favicon icon -->
-    <link rel="icon" href="../assets1/images/favicon.ico" type="image/x-icon">
+    <link href="../assets/img/agric-logo.jpg" rel="icon">
 
     <link rel="stylesheet" href="../assets1/css/plugins/dataTables.bootstrap4.min.css">
     <!-- vendor css -->

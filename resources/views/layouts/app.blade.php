@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/agric-logo.jpg" rel="icon">
+  <link href="../assets/img/agric-logo.jpg" rel="agric-logo">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">

@@ -9,8 +9,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1>About Us</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <h1 style="font-size: 5rem;">ABOUT US</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
@@ -27,9 +26,6 @@
         <div class="row gy-4 justify-content-between align-items-center">
           <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
             <img src="assets/img/image33.jpg" alt="Image" class="img-fluid" >
-            {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
-              <span class="play"><i class="bi bi-play-fill"></i></span>
-            </a> --}}
           </div>
           <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
             <h2 class="content-title mb-4">ABOUT US</h2>
@@ -51,7 +47,7 @@
                 are aligned with sustainable development goals to create long-lasting, positive impacts 
                 for farmers, communities, and the environment.
             </p>
-
+<br>
             <p><a href="contact" class="btn-cta">Get in touch</a></p>
           </div>
         </div>
@@ -59,7 +55,7 @@
     </section><!-- /About 3 Section -->
 
     <!-- Team Section -->
-    <section class="team-15 team section" id="team">
+    {{-- <section class="team-15 team section" id="team">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Team</h2>
@@ -159,7 +155,8 @@
         </div>
       </div>
 
-    </section><!-- /Team Section -->
+    </section> --}}
+    <!-- /Team Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">

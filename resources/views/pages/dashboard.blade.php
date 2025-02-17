@@ -41,7 +41,7 @@
             <div class="col-sm-3">
                 <div class="card bg-c-yellow text-white widget-visitor-card">
                     <div class="card-body text-center">
-                        <h2 class="text-white">1</h2>
+                        <h2 class="text-white">{{ $customers }}</h2>
                         <h6 class="text-white">Customers</h6>
                         <i class="feather icon-user"></i>
                     </div>

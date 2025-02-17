@@ -9,11 +9,11 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1>Blog</h1>
+        <h1 style="font-size: 5rem;">BLOGS</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
-            <li class="current">Blog</li>
+            <li class="current">Blogs</li>
           </ol>
         </nav>
       </div>

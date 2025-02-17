@@ -9,11 +9,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1>Services</h1>
-        {{-- <p>
-          Home
-          /
-          Services</p> --}}
+        <h1 style="font-size: 5rem;">SERVICES</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>

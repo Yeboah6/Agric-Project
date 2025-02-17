@@ -9,8 +9,8 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(../assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1>Blog Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <h1 style="font-size: 5rem;">BLOG DETAILS</h1>
+        {{-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> --}}
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
@@ -215,25 +215,29 @@
                   <img src="../assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
                   <div>
                     <h4>{{ $blogDetails -> author}}</h4>
-                    <div class="social-links">
+                    {{-- <div class="social-links">
                       <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
                       <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
                       <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
                       <a href="https://instagram.com/#"><i class="biu bi-linkedin"></i></a>
-                    </div>
+                    </div> --}}
                   </div>
                 </div>
 
-                <p>
+                {{-- <p>
                   Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. 
                   Quas repellat voluptatem officia numquam sint aspernatur voluptas. 
                   Esse et accusantium ut unde voluptas.
-                </p>
+                </p> --}}
 
               </div>
 
             </div><!--/Blog Author Widget -->
-
+<br>
+<br>
+<br>
+<br>
+<br>
             <!-- Recent Posts Widget 2 -->
             <div class="recent-posts-widget-2 widget-item">
 

@@ -1,10 +1,15 @@
 <footer id="footer" class="footer dark-background">
 
     <div class="footer-top">
-      <div class="container">
+      <div class="container" style="position: relative">
+        <a href="/" class=" d-flex align-items-center">
+          <img src="../assets/img/agric-logo.jpg" alt="AgriCulture" style="width: 15%;">
+        </a>
+
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
             <a href="/" class="logo d-flex align-items-center">
+              
               <span class="sitename">Makoine Foods and Farms</span>
             </a>
             <div class="footer-contact pt-3">
@@ -23,39 +28,6 @@
               <li><a href="services">Services</a></li>
               <li><a href="testimonials">Testimonials</a></li>
               <li><a href="contact">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
             </ul>
           </div>
 

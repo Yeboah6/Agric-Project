@@ -6,6 +6,23 @@
 	
 @include('includes.admin-header')
 
+<style>
+
+.btn-send {
+        background-color: #116530;
+        color: #fff; 
+        margin-left: 1350px;
+        border-radius: 5px;
+     }
+
+    @media screen and (max-width: 1850px) {
+        .btn-send {
+            margin-left: 800px;
+        }
+    }
+
+</style>
+
 <!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
     <div class="pcoded-content">
@@ -18,7 +35,7 @@
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Blogs</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Customers</a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +48,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Blogs List</h5>
+                        <h5>Customer List</h5>
+                        <a href="/send-email" class="btn btn-send">Send Email</a>
                     </div>
                     <div class="card-body">
                         <div class="row align-items-center m-l-0">

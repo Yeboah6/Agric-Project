@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Newsletter;
 use App\Models\Blog;
 use App\Models\Login;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
@@ -109,8 +111,9 @@ class MainController extends Controller
         }
 
         $posted = Blog::all() -> count();
+        $customers = Customer::all() -> count();
 
-        return view('pages.dashboard', compact('data', 'posted'));
+        return view('pages.dashboard', compact('data', 'posted', 'customers'));
     }
 
     // Display Posts Page Function
@@ -199,6 +202,7 @@ class MainController extends Controller
         return view('pages.customers', compact('data', 'customers'));
     }
 
+    // Subscribing to Newsletter Page Function
     public function subscribe(Request $request) {
         $validateData = $request -> validate([
             'name' => 'required|string',
@@ -214,5 +218,29 @@ class MainController extends Controller
 
         $customer -> save();
         return redirect() -> back();
+    }
+
+    public function sendEmailNotification() {
+        $customers = Customer::pluck('email')->toArray();
+        // $blog = Blog::all();
+        $latestBlog = Blog::latest()->first();
+
+         // Ensure there is a blog post to send
+    if (!$latestBlog) {
+        return "No blog post available.";
+    }
+
+    // Ensure the `$details` array contains required keys
+    $blog = [
+        'title'   => $latestBlog->title ?? 'Untitled',
+        'image'   => !empty($latestBlog->image) ? asset($latestBlog->image) : null, // Ensure image is included
+        'author'  => $latestBlog->author ?? 'Unknown Author',
+    ];
+
+    // dd($customers);
+    Mail::to($customers) -> send(new Newsletter($blog));
+
+    return redirect('/customers') -> with('success', 'Email has Successfully been sent');
+    
     }
 }

@@ -3,7 +3,7 @@
 
       <a href="/" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../assets/img/agric-logo.jpg" alt="AgriCulture" >
+        <img src="../assets/img/agric-logo.jpg" alt="AgriCulture">
         <!-- <h1 class="sitename">AgriCulture</h1>  -->
       </a>
 
