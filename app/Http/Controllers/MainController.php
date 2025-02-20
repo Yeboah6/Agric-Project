@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Newsletter;
+use App\Mail\ContactMail;
 use App\Models\Blog;
+use App\Models\Comments;
 use App\Models\Login;
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -12,43 +14,105 @@ use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
 {
+    // Display Home Page Function
     public function home() {
         $data = array();
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
 
-        $blog = Blog::all();
-
-        return view('pages.home', compact('blog', 'data'));
+        return view('pages.home', compact('data'));
     }
 
+    // Display About Page Function
     public function about() {
-        return view('pages.about');
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        return view('pages.about', compact('data'));
     }
 
+    // Display Services Page Function
     public function services() {
-        return view('pages.services');
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        return view('pages.services', compact('data'));
     }
 
+    // Display Testimonials Page Function
     public function testimonials() {
-        return view('pages.testimonials');
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        return view('pages.testimonials', compact('data'));
     }
 
+    // Display Contact Page Function
     public function contact() {
-        return view('pages.contact');
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        return view('pages.contact', compact('data'));
     }
 
+    // Send Message From Contact Function
+    public function postContact(Request $request) {
+        $validateData = $request -> validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'message' => 'required|string|max:500'
+        ]);
+
+        try {
+            Mail::to($validateData['email'])->send(new ContactMail($validateData));
+    
+            return response()->json(['success' => true, 'message' => 'Message sent successfully!']);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => 'Failed to send message. Please try again.']);
+        }
+    }
+
+    // Display Blog Page Function
     public function blog() {
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
         $blogs = Blog::all();
-        return view('pages.blog-pages.blog', compact('blogs'));
+        return view('pages.blog-pages.blog', compact('blogs', 'data'));
     }
 
+    // Display Blog Details Page Function
     public function blogDetails($id) {
+        $data = array();
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
         $blogDetails = Blog::findOrFail($id);
+        $comments = Comments::all();
+
+        foreach ($comments as $comment) {
+            if ($comment -> post_id == $blogDetails -> id) {
+                
+            }
+        }
+
+        // dd($com);
 
         $recentPost = Blog::all();
-        return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost'));
+        return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost', 'data'));
     }
 
     // Dislpay Add Post Page Function
@@ -104,6 +168,7 @@ class MainController extends Controller
         return redirect('/blogs') -> with('success', 'Post Added Successfully');
     }
 
+    // Display Dashboard Page Function
     public function dashboard() {
         $data = array();
         if (Session::has('loginId')) {
@@ -166,6 +231,7 @@ class MainController extends Controller
             'author' => 'required|string',
             'title' => 'required|string',
             'image' => 'nullable|file|mimes:jpeg,png,jpg,svg|max:5048',
+            'video' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:10240', // 10MB max
             'message' => 'required|string',
         ]);
 
@@ -177,13 +243,21 @@ class MainController extends Controller
             'message' => $validateData['message'],
         ]);
 
-        if($file = $request->hasFile('image')) {
+        if($file = $request -> hasFile('image')) {
          
             $file = $request->file('image');
-            $fileName = 'IM_'.$file->getClientOriginalName();
+            $fileName = 'IM_'.$file -> getClientOriginalName();
             $destinationPath = public_path().'/uploads/blog-images/';
-            $file->move($destinationPath,$fileName);
+            $file -> move($destinationPath,$fileName);
             $edit -> image = $fileName;
+        }
+
+        if ($request -> hasFile('video')) {
+            $file = $request -> file('video');
+            $fileName = 'VID_' . time() . '.' . $file->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/blog-videos/');
+            $file -> move($destinationPath, $fileName);
+            $edit -> video = 'uploads/blog-videos/' . $fileName; // Save relative path
         }
 
         $edit -> update();
@@ -220,6 +294,7 @@ class MainController extends Controller
         return redirect() -> back();
     }
 
+    // Send Newsletter To all Customers Function
     public function sendEmailNotification() {
         $customers = Customer::pluck('email')->toArray();
         // $blog = Blog::all();
@@ -242,5 +317,27 @@ class MainController extends Controller
 
     return redirect('/customers') -> with('success', 'Email has Successfully been sent');
     
+    }
+
+    // Posting Comment Function
+    public function comment(Request $request) {
+        $validateData = $request -> validate([
+            'post_id' => 'required|string',
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'comment' => 'required|string'
+        ]);
+
+        $comment = new Comments();
+
+        $comment -> fill([
+            'post_id' => $validateData['post_id'],
+            'name' => $validateData['name'],
+            'email' => $validateData['email'],
+            'comment' => $validateData['comment'],
+        ]);
+
+        $comment -> save();
+        return redirect() -> back();
     }
 }

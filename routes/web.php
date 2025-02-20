@@ -11,6 +11,7 @@ Route::get('/services', [MainController::class, 'services']) -> name('services')
 Route::get('/about', [MainController::class, 'about']) -> name('about');
 
 Route::get('/contact', [MainController::class, 'contact']) -> name('contact');
+Route::post('/contact', [MainController::class, 'postContact']) -> name('contact');
 
 Route::get('/testimonials', [MainController::class, 'testimonials']) -> name('testimonials');
 
@@ -41,3 +42,5 @@ Route::get('/customers', [MainController::class, 'customer']) -> name('customers
 Route::post('/subscribe', [MainController::class, 'subscribe']) -> name('subscribe');
 
 Route::get('/send-email', [MainController::class, 'sendEmailNotification']) -> name('send-email');
+
+Route::post('/comment', [MainController::class, 'comment']) -> name('comment');

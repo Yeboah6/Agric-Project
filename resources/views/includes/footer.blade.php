@@ -6,17 +6,23 @@
     left: 450px;
   }
 
-@media screen and (max-width: 450px) {
-      .setting {
-        top: 30px;
-        left: 0;
-      }
+  .agric {
+    position: absolute;
+    top: 70px;
+  }
 
-       img {
-        position: absolute;
-        top: 550px;
-      }
+  @media screen and (max-width: 500px) {
+    .setting {
+      top: 30px;
+      left: 0;
+      /* bottom: 150px; */
     }
+
+    .agric {
+      position: relative;
+      top: 0;
+    }
+  }
 
 </style>
 

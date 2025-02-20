@@ -15,8 +15,8 @@
                         <i class="feather icon-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
-                        <div class="pro-head">
-                            <span>{{ $data -> email}}</span>
+                        <div class="pro-head" style="background-color: #116530;">
+                            <span>{{ $data -> username}}</span>
                             <a href="/logout" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>

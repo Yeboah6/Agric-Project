@@ -33,7 +33,7 @@
                 <div class="card bg-c-green text-white widget-visitor-card" style="background-color:#4680FF;">
                     <div class="card-body text-center">
                         <h2 class="text-white">{{ $posted }}</h2>
-                        <h6 class="text-white">Posted</h6>
+                        <h6 class="text-white">Posts</h6>
                         <i class="feather icon-file-text"></i>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="card bg-c-green text-white widget-visitor-card">
                     <div class="card-body text-center">
                         <h2 class="text-white">1</h2>
-                        <h6 class="text-white">Approved</h6>
+                        <h6 class="text-white">Comments</h6>
                         <i class="feather icon-user-check"></i>
                     </div>
                 </div>

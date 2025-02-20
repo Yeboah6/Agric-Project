@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row gy-4 justify-content-between align-items-center">
           <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-            <img src="assets/img/image33.jpg" alt="Image" class="img-fluid" >
+            <img src="assets/img/image33.jpg" alt="Image" class="img-fluid" style="border-radius: 15px;">
           </div>
           <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
             <h2 class="content-title mb-4">ABOUT US</h2>

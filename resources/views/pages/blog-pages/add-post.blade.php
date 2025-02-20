@@ -7,15 +7,8 @@
 @include('includes.admin-header')
 
 <style>
-
-/* input[type="text"],
-    input[type="date"], 
-    input[type="email"],
-    input[type="file"],
-    input[type='month'], */
     textarea {
-        /* width: calc(100% - 20px); */
-        width: 1180px;
+        width: calc(100% - 20px);
         height: 300px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -67,15 +60,15 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
+                                    <label class="floating-label" for="title"><small class="text-danger"></small>Video</label>
                                     <div class="form-group">
-                                        <label class="floating-label" for="title"><small class="text-danger"></small>Video</label>
                                         <input type="file" name="video" class="form-control">
                                         <span class="text-danger">@error('video'){{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
+                                    <label class="floating-label" for="Attachment">Image</label>
                                     <div class="form-group">
-                                        <label class="floating-label" for="Attachment">Image</label>
                                         <input type="file" name="image" class="form-control">
                                         <span class="text-danger">@error('image'){{ $message }} @enderror</span>
                                     </div>

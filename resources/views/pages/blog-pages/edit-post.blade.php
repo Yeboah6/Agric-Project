@@ -7,15 +7,8 @@
 @include('includes.admin-header')
 
 <style>
-
-/* input[type="text"],
-    input[type="date"], 
-    input[type="email"],
-    input[type="file"],
-    input[type='month'], */
     textarea {
-        /* width: calc(100% - 20px); */
-        width: 1180px;
+        width: calc(100% - 20px);
         height: 300px;
         padding: 10px;
         border: 1px solid #ccc;
@@ -34,7 +27,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Blog</h5>
+                            <h5 class="m-b-10">Edit Blog</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
@@ -53,25 +46,43 @@
                         <form action="{{ url('/edit-post/'.$edit -> id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            <input type="text" name="blog_id" hidden>
-
                             <div class="form-group">
                                 <label class="floating-label" for="author"><small class="text-danger">* </small>Author</label>
                                 <input type="text" name="author" class="form-control" required value="{{ $edit -> author}}">
                                 <span class="text-danger">@error('author'){{ $message }} @enderror</span>
                             </div>
+                            <div class="form-group">
+                                <label class="floating-label" for="title"><small class="text-danger">* </small>Title</label>
+                                <input type="text" name="title" class="form-control" required value="{{ $edit -> title}}">
+                                <span class="text-danger">@error('title'){{ $message }} @enderror</span>
+                            </div>
                             <div class="row">
                                 <div class="col-sm-6">
+                                    <label class="floating-label" for="title"><small class="text-danger"></small>Video</label>
                                     <div class="form-group">
-                                        <label class="floating-label" for="title"><small class="text-danger">* </small>Title</label>
-                                        <input type="text" name="title" class="form-control" required value="{{ $edit -> title}}">
-                                        <span class="text-danger">@error('title'){{ $message }} @enderror</span>
+                                        <input type="file" name="video" class="form-control">
+<br>
+                                         @if($edit && $edit -> video)
+                                            <!-- Show the preview of the uploaded image -->
+                                            <video width="420" height="240" controls>
+                                              <source src="{{ asset($edit -> video) }}" type="video/mp4">
+                                              Your browser does not support the video tag.
+                                            </video>
+                                        @endif
+
+                                        <span class="text-danger">@error('video'){{ $message }} @enderror</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
+                                    <label class="floating-label" for="Attachment">Image</label>
                                     <div class="form-group">
-                                        <label class="floating-label" for="Attachment">Image</label>
-                                        <input type="file" name="image" class="form-control" value="{{ $edit -> image}}">
+                                        <input type="file" name="image" class="form-control">
+<br>
+                                         @if($edit && $edit -> image)
+                                            <!-- Show the preview of the uploaded image -->
+                                            <img src="{{ asset('uploads/blog-images/' . $edit -> image) }}" style="width:60%"  alt="Blog Image">
+                                        @endif
+
                                         <span class="text-danger">@error('image'){{ $message }} @enderror</span>
                                     </div>
                                 </div>

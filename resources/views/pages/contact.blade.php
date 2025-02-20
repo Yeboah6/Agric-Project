@@ -4,6 +4,14 @@
 
 @include('includes.header')
 
+<style>
+
+.text-area {
+  height: 250px;
+}
+
+</style>
+
   <main class="main">
 
     <!-- Page Title -->
@@ -86,35 +94,111 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
+            <form id="contactForm">
+              <style>
 
+                /* Spinner Animation */
+                .spinner {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid rgba(255, 255, 255, 0.3);
+                    border-top: 3px solid #fff;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                    margin-right: 8px;
+                    vertical-align: middle;
+                }
+                
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                
+                </style>
+    
+                @csrf
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control text-area" name="message" id="message" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading" style="display: none;">
+                      <span class="spinner"></span> Sending...
+                  </div>
+                  <div class="error-message text-danger" style="display: none;"></div>
+                  <div class="sent-message text-success" style="display: none;">Your message has been sent. Thank you!</div>
+                </div>
+              
+                <div class="text-center">
+                    <button type="submit" id="sendMessageBtn" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- ✅ AJAX Script -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              document.getElementById("contactForm").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Prevent page reload
+              
+                  let formData = new FormData(this);
+                  let sendMessageBtn = document.getElementById("sendMessageBtn");
+                  let loading = document.querySelector(".loading");
+                  let errorMessage = document.querySelector(".error-message");
+                  let sentMessage = document.querySelector(".sent-message");
+              
+                  sendMessageBtn.disabled = true;
+                  loading.style.display = "block";
+                  errorMessage.style.display = "none";
+                  sentMessage.style.display = "none";
+              
+                  fetch("{{ url('/contact') }}", {
+                      method: "POST",
+                      body: formData,
+                      headers: {
+                          "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                      }
+                  })
+
+                  .then(response => response.json())
+                  .then(data => {
+                      sendMessageBtn.disabled = false;
+                      loading.style.display = "none";
+                      if (data.success) {
+                          sentMessage.style.display = "block";
+                          document.getElementById("contactForm").reset(); // Reset form
+                      } else {
+                          errorMessage.style.display = "block";
+                          errorMessage.innerHTML = data.message;
+                      }
+                  })
+                  .catch(error => {
+                      sendMessageBtn.disabled = false;
+                      loading.style.display = "none";
+                      errorMessage.style.display = "block";
+                      errorMessage.innerHTML = "Something went wrong. Please try again.";
+                  });
+              });
+          });
+        </script>
+        
         </div>
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </section>
+    <!-- /Contact Section -->
 
     <!-- Call To Action Section -->
     @include('includes.blog-letter')

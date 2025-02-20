@@ -4,6 +4,24 @@
 
 @include('includes.header')
 
+<style>
+
+  .ser-vid {
+    width: 620px; 
+    height:240px;
+    margin-left: -80px;
+  }
+
+@media screen and (max-width: 500px) {
+  .ser-vid {
+    width: 460px; 
+    height:240px;
+    margin-left: -0;
+  }
+  }
+
+</style>
+
   <main class="main">
 
     <!-- Page Title -->
@@ -143,7 +161,7 @@
         <div class="container">
           <div class="row">
               <div class="col-lg-6 mb-4 mb-lg-0">
-                <video width="620" height="240" controls style="margin-left: -80px;">
+                <video class="ser-vid" controls>
                   <source src="assets/img/video11.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -152,8 +170,7 @@
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <h3 class="content-subtitle text-white opacity-50">Why Choose Us</h3>
               <h2 class="content-title mb-4">
-                More than <strong>50 year experience</strong> in agriculture
-                industry
+                <strong>Experience</strong> in agriculture industry
               </h2>
               <div class="row my-5">
                 <div class="col-lg-12 d-flex align-items-start mb-4">
