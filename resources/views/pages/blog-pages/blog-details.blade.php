@@ -4,6 +4,28 @@
 
 @include('includes.header')
 
+    <!-- CSS (for rotating loader) -->
+    <style>
+      /* Rotating spinner */
+      .spinner {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 3px solid rgba(255, 255, 255, 0.3);
+          border-top: 3px solid #fff;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-right: 8px;
+          vertical-align: middle;
+      }
+    
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+    </style>
+
+
   <main class="main">
 
     <!-- Page Title -->
@@ -20,6 +42,7 @@
     </div><!-- End Page Title -->
 
     <div class="container">
+      
       <div class="row">
 
         <div class="col-lg-8">
@@ -27,7 +50,9 @@
           <!-- Blog Details Section -->
           <section id="blog-details" class="blog-details section">
             <div class="container">
-
+              <button onclick="history.back()" style="background-color: #116530;color: #fff" class="btn">Back</button>
+              <br>
+              <br>
               <article class="article">
 
                 <div class="post-img">
@@ -65,40 +90,34 @@
           <!-- /Blog Details Section -->
 
           <!-- Blog Comments Section -->
-          <section id="blog-comments" class="blog-comments section">
+          <section id="commentList" class="blog-comments section">
 
             <div class="container">
 
-              <h4 class="comments-count">8 Comments</h4>
+              <h4 class="comments-count"> {{ $commentcount }} Comments</h4>
 
-              <div id="comment-1" class="comment">
+              @if ($comments -> count() > 0)
+                @foreach ($comments as $comment)
+                  <div id="comment-1" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
                   <div>
-                    <h5><a href=""></a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
+                    <h5><a href="">{{ $comment -> name}}</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">{{ $comment -> created_at -> format('d M Y, h:i A')}}</time>
                     <p>
-                      Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
-                      Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                      {{$comment -> comment}}
                     </p>
                   </div>
                 </div>
               </div>
-              <!-- End comment #1 -->
+              @endforeach
+                @else
+                  <p>No comments yet. Be the first to comment!</p>
 
-              <div id="comment-2" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
-                  <div>
-                    <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                    <time datetime="2020-01-01">01 Jan,2022</time>
-                    <p>
-                      Ipsam tempora sequi voluptatem quis sapiente non. Autem itaque eveniet saepe. Officiis illo ut beatae.
-                    </p>
-                  </div>
-                </div>
+              @endif
 
-                <div id="comment-reply-1" class="comment comment-reply">
+              
+
+                {{-- <div id="comment-reply-1" class="comment comment-reply">
                   <div class="d-flex">
                     <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
                     <div>
@@ -113,8 +132,8 @@
                       </p>
                     </div>
                   </div>
-
-                </div><!-- End comment reply #1-->
+                </div> --}}
+                <!-- End comment reply #1-->
 
               </div><!-- End comment #2-->
 
@@ -123,93 +142,100 @@
           </section><!-- /Blog Comments Section -->
 
           <!-- Comment Form Section -->
-          <section id="comment-form" class="comment-form section">
+          <section id="comment-form" class="comment-form section" style="width: 900px;">
             <div class="container">
-
-              <form id="commentForm">
-
-                <h4>Post Comment</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
-
-                <input type="text" class="form-control" name="post_id" value="{{ $blogDetails -> id}}">
-                <br>
-                <br>
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                <form id="commentForm">
+                    <h4>Post Comment</h4>
+                    <p>Your email address will not be published. Required fields are marked *</p>
+        
+                    <input type="text" class="form-control" hidden name="post_id" value="{{ $blogDetails->id }}">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input name="name" type="text" class="form-control" placeholder="Your Name*" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="email" type="email" class="form-control" placeholder="Your Email*" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <textarea name="comment" class="form-control" placeholder="Your Comment*" required></textarea>
+                        </div>
+                    </div>
+        
+                    <!-- Status Messages -->
+                    <div class="my-3">
+                      <div class="error-message text-danger" style="display: none;"></div>
+                      <div class="sent-message text-success" style="display: none;text-align: center;">Your comment has been posted!</div>
                   </div>
-                  <div class="col-md-6 form-group">
-                    <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                  
+                  <div class="text-center">
+                      <button type="submit" id="commentBtn" class="btn btn-primary">
+                          Post Comment
+                      </button>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col form-group">
-                    <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                  </div>
-                </div>
-
-                <div class="my-3">
-                  <div class="loading" style="display: none;">
-                      <span class="spinner"></span> Sending...
-                  </div>
-                  <div class="error-message text-danger" style="display: none;"></div>
-                  <div class="sent-message text-success" style="display: none;">Your message has been sent. Thank you!</div>
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" id="commentBtn" class="btn btn-primary">Post Comment</button>
-                </div>
-
-              </form>
-
+                </form>
             </div>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                  document.getElementById("commentForm").addEventListener("submit", function(event) {
-                      event.preventDefault(); // Prevent page reload
-                  
-                      let formData = new FormData(this);
-                      let sendMessageBtn = document.getElementById("commentBtn");
-                      let loading = document.querySelector(".loading");
-                      let errorMessage = document.querySelector(".error-message");
-                      let sentMessage = document.querySelector(".sent-message");
-                  
-                      sendMessageBtn.disabled = true;
-                      loading.style.display = "block";
-                      errorMessage.style.display = "none";
-                      sentMessage.style.display = "none";
-                  
-                      fetch("{{ url('/comment') }}", {
-                          method: "POST",
-                          body: formData,
-                          headers: {
-                              "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
-                          }
-                      })
-    
-                      .then(response => response.json())
-                      .then(data => {
-                          sendMessageBtn.disabled = false;
-                          loading.style.display = "none";
-                          if (data.success) {
-                              sentMessage.style.display = "block";
-                              document.getElementById("commentForm").reset(); // Reset form
-                          } else {
-                              errorMessage.style.display = "block";
-                              errorMessage.innerHTML = data.message;
-                          }
-                      })
-                      .catch(error => {
-                          sendMessageBtn.disabled = false;
-                          loading.style.display = "none";
+        </section>
+        
+        <!-- JavaScript -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              document.getElementById("commentForm").addEventListener("submit", function(event) {
+                  event.preventDefault(); // Prevent page reload
+          
+                  let formData = new FormData(this);
+                  let sendMessageBtn = document.getElementById("commentBtn");
+                  let loadingImg = `<img class="spinner" src="{{ asset('../assets/img/icons8-spinner.gif') }}" alt="Loading..." width="25">`;
+          
+                  let originalBtnText = sendMessageBtn.innerHTML; // Store original text
+                  sendMessageBtn.innerHTML = loadingImg; // Replace text with spinner
+                  sendMessageBtn.disabled = true; // Disable button
+          
+                  fetch("{{ url('/comment') }}", {
+                      method: "POST",
+                      body: formData,
+                      headers: {
+                          "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                      }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      sendMessageBtn.innerHTML = originalBtnText; // Restore button text
+                      sendMessageBtn.disabled = false;
+                      if (data.success) {
+                          document.querySelector(".sent-message").style.display = "block";
+                          document.getElementById("commentForm").reset(); // Reset form
+                      } else {
+                          let errorMessage = document.querySelector(".error-message");
                           errorMessage.style.display = "block";
-                          errorMessage.innerHTML = "Something went wrong. Please try again.";
-                      });
+                          errorMessage.innerHTML = data.message;
+                      }
+                  })
+                  .catch(error => {
+                      sendMessageBtn.innerHTML = originalBtnText; // Restore button text
+                      sendMessageBtn.disabled = false;
+                      let errorMessage = document.querySelector(".error-message");
+                      errorMessage.style.display = "block";
+                      errorMessage.innerHTML = "Something went wrong. Please try again.";
                   });
               });
-            </script>
-          </section>
+          });
+          </script>
+          
+        
+      <!-- CSS (for rotating loader) -->
+      <style>
+            /* Rotating spinner */
+            .spinner {
+              width: 25px;
+              height: 25px;
+              filter: red; /* Change color */
+            }
+
+        </style>
+        
           <!-- /Comment Form Section -->
 
         </div>
@@ -223,26 +249,19 @@
 
               <div class="d-flex flex-column align-items-center">
                 <div class="d-flex align-items-center w-100">
-                  <img src="../assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
                   <div>
                     <h4>{{ $blogDetails -> author}}</h4>
-                    {{-- <div class="social-links">
-                      <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
-                      <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
-                      <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
-                      <a href="https://instagram.com/#"><i class="biu bi-linkedin"></i></a>
-                    </div> --}}
                   </div>
                 </div>
 
               </div>
 
             </div><!--/Blog Author Widget -->
-<br>
-<br>
-<br>
-<br>
-<br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
             <!-- Recent Posts Widget 2 -->
             <div class="recent-posts-widget-2 widget-item">
 

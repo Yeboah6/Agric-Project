@@ -181,10 +181,6 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>CORE VALUES </h2>
-        {{-- <p>To be Ghana's leading producer of high-quality grains, driving agricultural innovation and 
-          economic growth by empowering smallholder farmers with advanced techniques, fair 
-          resource access, and sustainable market opportunities.
-        </p> --}}
       </div>
       <!-- End Section Title -->
       <div class="content">
@@ -218,6 +214,8 @@
                     such as precision farming, crop monitoring systems, and data analytics to 
                     enhance agricultural productivity and efficiency. Innovation extends to our 
                     business processes, ensuring scalability and adaptability in a dynamic sector.
+                    <br>
+                    <br>
                   </p>
                 </div>
               </div>
@@ -252,6 +250,7 @@
                     our operations—from seed selection to post-harvest processing. By leveraging 
                     advanced techniques and global best practices, we ensure that our products 
                     meet both local and international market expectations.
+                <br>
                 <br>
                 <br>
                   </p>

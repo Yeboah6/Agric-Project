@@ -141,7 +141,7 @@
                 </div>
               
                 <div class="text-center">
-                    <button type="submit" id="sendMessageBtn" class="btn btn-primary">Send Message</button>
+                    <button type="submit" id="sendMessageBtn" class="btn" style="background-color: #116530;color:#fff;">Send Message</button>
                 </div>
             </form>
         </div>

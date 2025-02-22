@@ -33,6 +33,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <button onclick="history.back()" style="background-color: #116530;color: #fff" class="btn">Back</button>
+                        <br>
+                        <br>
                         <div class="row">
                             <div class="col-lg-5">
                                 <div id="carouselExampleCaptions" class="">

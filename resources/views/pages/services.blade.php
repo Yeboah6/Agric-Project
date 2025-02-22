@@ -316,6 +316,95 @@
     </section>
     <!-- /Testimonials Section -->
 
+        <!-- Services 2 Section -->
+        <section id="services-2" class="services-2 section dark-background">
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Services</h2>
+            {{-- <p>Necessitatibus eius consequatur</p> --}}
+          </div><!-- End Section Title -->
+    
+          <div class="services-carousel-wrap">
+            <div class="container">
+              <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    },
+                    "navigation": {
+                      "nextEl": ".js-custom-next",
+                      "prevEl": ".js-custom-prev"
+                    },
+                    "breakpoints": {
+                      "320": {
+                        "slidesPerView": 1,
+                        "spaceBetween": 40
+                      },
+                      "1200": {
+                        "slidesPerView": 3,
+                        "spaceBetween": 40
+                      }
+                    }
+                  }
+                </script>
+                <button class="navigation-prev js-custom-prev">
+                  <i class="bi bi-arrow-left-short"></i>
+                </button>
+                <button class="navigation-next js-custom-next">
+                  <i class="bi bi-arrow-right-short"></i>
+                </button>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image8.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image42.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image6.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image47.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image11.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image50.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="service-item">
+                      <img src="assets/img/image35.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </section><!-- /Services 2 Section -->
+
     <!-- Call To Action Section -->
     @include('includes.blog-letter')
     <!-- /Call To Action Section -->

@@ -43,6 +43,9 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
+                        <button onclick="history.back()" style="background-color: #116530;color: #fff" class="btn">Back</button>
+                        <br>
+                        <br>
                         <form action="{{ url('/edit-post/'.$edit -> id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
 

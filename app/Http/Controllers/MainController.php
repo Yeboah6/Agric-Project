@@ -95,25 +95,21 @@ class MainController extends Controller
 
     // Display Blog Details Page Function
     public function blogDetails($id) {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
-
+    
         $blogDetails = Blog::findOrFail($id);
-        $comments = Comments::all();
-
-        foreach ($comments as $comment) {
-            if ($comment -> post_id == $blogDetails -> id) {
-                
-            }
-        }
-
-        // dd($com);
-
-        $recentPost = Blog::all();
-        return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost', 'data'));
-    }
+    
+        // Get only the comments that belong to this blog post
+        $comments = Comments::where('post_id', $blogDetails->id)->get();
+        $commentcount = Comments::where('post_id', $blogDetails->id)->count();
+    
+        $recentPost = Blog::latest()->limit(5)->get(); // Get the latest 5 posts
+    
+        return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost', 'data', 'comments', 'commentcount'));
+    }    
 
     // Dislpay Add Post Page Function
     public function addPost() {
@@ -321,23 +317,30 @@ class MainController extends Controller
 
     // Posting Comment Function
     public function comment(Request $request) {
-        $validateData = $request -> validate([
+        $validateData = $request->validate([
             'post_id' => 'required|string',
             'name' => 'required|string',
             'email' => 'required|email',
             'comment' => 'required|string'
         ]);
-
+    
         $comment = new Comments();
 
-        $comment -> fill([
+        $comment->fill([
             'post_id' => $validateData['post_id'],
             'name' => $validateData['name'],
             'email' => $validateData['email'],
             'comment' => $validateData['comment'],
         ]);
-
-        $comment -> save();
-        return redirect() -> back();
+    
+        $comment->save();
+    
+        // Return JSON response instead of redirecting
+        return response()->json([
+            'success' => true,
+            'message' => 'Comment posted successfully!',
+            'comment' => $comment
+        ]);
     }
+
 }

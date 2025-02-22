@@ -44,3 +44,6 @@ Route::post('/subscribe', [MainController::class, 'subscribe']) -> name('subscri
 Route::get('/send-email', [MainController::class, 'sendEmailNotification']) -> name('send-email');
 
 Route::post('/comment', [MainController::class, 'comment']) -> name('comment');
+
+Route::get('/profile', [AuthController::class, 'profile']) -> name('profile') -> middleware('isLoggedIn');
+Route::post('/profile', [AuthController::class, 'updateProfile']) -> name('profile');
