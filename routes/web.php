@@ -31,11 +31,14 @@ Route::get('/add-post', [MainController::class, 'addPost']) -> name('add-post') 
 Route::post('/add-post', [MainController::class, 'saveAddPost']) -> name('add-post');
 
 Route::get('/delete-post/{id}', [MainController::class, 'deletePost']) -> name('delete-post');
+Route::get('/delete-customer/{id}', [MainController::class, 'deleteCustomer']) -> name('delete-customer');
 
 Route::get('/view-details/{id}', [MainController::class, 'viewDetails']) -> name('view-details');
 
 Route::get('/edit-post/{id}', [MainController::class, 'editPost']) -> name('edit-post');
 Route::post('/edit-post/{id}', [MainController::class, 'saveEditPost']) -> name('edit-post');
+
+Route::post('/update-customer/{id}', [MainController::class, 'editCustomer']) -> name('customer.update');
 
 Route::get('/customers', [MainController::class, 'customer']) -> name('customers') -> middleware('isLoggedIn');
 

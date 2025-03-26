@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>New Blog Post Notification</title>
-</head>
-<body>
-    <h2>{{ $blog['title'] }}</h2>
-    {{-- <p>{{ $blog['message'] }}</p> --}}
-    <p>By: {{ $blog['author'] }}</p>
-    <p>Check it out on our website!</p>
-</body>
-</html>
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -99,8 +85,9 @@
         <tr>
             <td class="email-body">
                 <h2>{{ $blog['title'] }}</h2>
-                <img src="{{ asset('../uploads/blog-images/'.$blog['image']) }}" alt="">
+                {{-- <img src="{{ asset('../uploads/blog-images/'.$blog['image']) }}" alt=""> --}}
                 <p>By: {{ $blog['author'] }}</p>
+                <p>Message: <br> <span>{{ $blog['message'] }}</span></p>
                 <p>Check it out on our website! <a href="#">Makoine Foods and Farms LTD</a></p>
             </td>
         </tr>

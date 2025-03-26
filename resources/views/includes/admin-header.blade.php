@@ -11,6 +11,9 @@
         <ul class="navbar-nav ml-auto">
             <li>
                 <div class="dropdown drp-user">
+                    <a href="/">
+                        <i class="feather icon-globe"></i>
+                    </a>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="feather icon-user"></i>
                     </a>

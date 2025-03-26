@@ -12,6 +12,13 @@
   <link href="../assets/img/agric-logo.jpg" rel="icon">
   <link href="../assets/img/agric-logo.jpg" rel="agric-logo">
 
+  <!-- Add this inside your <head> section -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Add this before closing </body> tag -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>

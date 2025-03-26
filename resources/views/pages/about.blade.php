@@ -55,16 +55,16 @@
     </section><!-- /About 3 Section -->
 
     <!-- Team Section -->
-    {{-- <section class="team-15 team section" id="team">
+    <section class="team-15 team section" id="team">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Team</h2>
         <p>Our Team of Experts</p>
-      </div><!-- End Section Title -->
-
+      </div>
+      <!-- End Section Title -->
+    
       <div class="content">
         <div class="container">
-
           <div class="row">
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
@@ -77,7 +77,7 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
                 <div class="person-contents">
@@ -89,7 +89,7 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
                 <div class="person-contents">
@@ -101,7 +101,7 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
                 <div class="person-contents">
@@ -114,7 +114,7 @@
               </div>
             </div>
           </div>
-
+    
           <div class="row">
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
@@ -127,20 +127,19 @@
                 </div>
               </div>
             </div>
-
+    
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="person">
                 <div class="person-contents">
                   <h3>Financial Experts</h3>
                   <span class="position">Providing farmers and stakeholders with financial 
                     planning, investment strategies, and access to funding options, ensuring 
-                    sustainable growth and economic stability across operations.
-                    </span>
+                    sustainable growth and economic stability across operations.</span>
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
+    
+            <div class="col-lg-3 col-md-6 mb-4 offset-lg-3"> <!-- Centering the last item -->
               <div class="person">
                 <div class="person-contents">
                   <h3>Technology Advisors</h3>
@@ -154,8 +153,8 @@
           </div>
         </div>
       </div>
-
-    </section> --}}
+    </section>
+    
     <!-- /Team Section -->
 
     <!-- Services Section -->

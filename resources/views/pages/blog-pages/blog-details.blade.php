@@ -63,25 +63,30 @@
 
                 <div class="meta-top">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details">{{ $blogDetails -> author}}</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{ $blogDetails -> created_at -> format('F d, Y')}}</time></a></li>
-                    {{-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li> --}}
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> {{ $blogDetails -> author}}</li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2020-01-01">{{ $blogDetails -> created_at -> format('F d, Y')}}</time></li>
+                    <br>
+                    <br>
                   </ul>
-                </div><!-- End meta top -->
+                </div>
+                <!-- End meta top -->
 
-                <div class="content">
+                {{-- <div class="content"> --}}
                   <p>
                     {{ $blogDetails -> message}}
                   </p>
+                  <br>
+                  <br>
                   @if($blogDetails -> video)
                     <blockquote>
                       <video width="620" height="240" controls>
-                          <source src="{{ asset($blogDetails -> video) }}" type="video/mp4">
+                          <source src="{{ asset('uploads/blog-videos/' . $blogDetails -> video) }}" type="video/mp4">
                           Your browser does not support the video tag.
                       </video>
                     </blockquote>
                   @endif
-                </div><!-- End post content -->
+                {{-- </div> --}}
+                <!-- End post content -->
 
               </article>
 
@@ -101,7 +106,7 @@
                   <div id="comment-1" class="comment">
                 <div class="d-flex">
                   <div>
-                    <h5><a href="">{{ $comment -> name}}</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <h5><a href="">{{ $comment -> name}}</a></h5>
                     <time datetime="2020-01-01">{{ $comment -> created_at -> format('d M Y, h:i A')}}</time>
                     <p>
                       {{$comment -> comment}}
@@ -112,34 +117,15 @@
               @endforeach
                 @else
                   <p>No comments yet. Be the first to comment!</p>
-
               @endif
 
-              
-
-                {{-- <div id="comment-reply-1" class="comment comment-reply">
-                  <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
-                    <div>
-                      <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
-                      <time datetime="2020-01-01">01 Jan,2022</time>
-                      <p>
-                        Enim ipsa eum fugiat fuga repellat. Commodi quo quo dicta. Est ullam aspernatur ut vitae quia mollitia id non. Qui ad quas nostrum rerum sed necessitatibus aut est. Eum officiis sed repellat maxime vero nisi natus. Amet nesciunt nesciunt qui illum omnis est et dolor recusandae.
-
-                        Recusandae sit ad aut impedit et. Ipsa labore dolor impedit et natus in porro aut. Magnam qui cum. Illo similique occaecati nihil modi eligendi. Pariatur distinctio labore omnis incidunt et illum. Expedita et dignissimos distinctio laborum minima fugiat.
-
-                        Libero corporis qui. Nam illo odio beatae enim ducimus. Harum reiciendis error dolorum non autem quisquam vero rerum neque.
-                      </p>
-                    </div>
-                  </div>
-                </div> --}}
-                <!-- End comment reply #1-->
-
-              </div><!-- End comment #2-->
+              </div>
+              <!-- End comment #2-->
 
             </div>
 
-          </section><!-- /Blog Comments Section -->
+          </section>
+          <!-- /Blog Comments Section -->
 
           <!-- Comment Form Section -->
           <section id="comment-form" class="comment-form section" style="width: 900px;">
@@ -168,7 +154,7 @@
                     <div class="my-3">
                       <div class="error-message text-danger" style="display: none;"></div>
                       <div class="sent-message text-success" style="display: none;text-align: center;">Your comment has been posted!</div>
-                  </div>
+                    </div>
                   
                   <div class="text-center">
                       <button type="submit" id="commentBtn" class="btn btn-primary">
@@ -226,7 +212,7 @@
           
         
       <!-- CSS (for rotating loader) -->
-      <style>
+        <style>
             /* Rotating spinner */
             .spinner {
               width: 25px;
@@ -247,14 +233,13 @@
             <!-- Blog Author Widget -->
             <div class="blog-author-widget widget-item">
 
-              <div class="d-flex flex-column align-items-center">
+              {{-- <div class="d-flex flex-column align-items-center">
                 <div class="d-flex align-items-center w-100">
                   <div>
                     <h4>{{ $blogDetails -> author}}</h4>
                   </div>
                 </div>
-
-              </div>
+              </div> --}}
 
             </div><!--/Blog Author Widget -->
               <br>

@@ -65,20 +65,10 @@
     <!-- Blog Pagination Section -->
     <section id="blog-pagination" class="blog-pagination section">
 
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <ul>
-            <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#" class="active">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li>...</li>
-            <li><a href="#">10</a></li>
-            <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
+      <!-- Blog Pagination Section -->
+      {{-- <div class="d-flex justify-content-center mt-4">
+        {{ $blogs->links() }}
+      </div> --}}
 
     </section>
     <!-- /Blog Pagination Section -->

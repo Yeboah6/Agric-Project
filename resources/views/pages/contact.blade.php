@@ -29,10 +29,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-
       <div class="mb-5">
-        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
-      </div><!-- End Google Maps -->
+        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1667.3440123085632!2d-0.25285397605529036!3d5.625143399195476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9974d119fd51%3A0x9e2ae6ebea3bc565!2sNew%20Achimota%20End!5e1!3m2!1sen!2sgh!4v1742950566456!5m2!1sen!2sgh" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      <!-- End Google Maps -->
 
       <div class="container" data-aos="fade">
 
@@ -77,7 +77,7 @@
                 <i class="bi bi-instagram flex-shrink-0"></i>
                 <div>
                   <h4>Follow Us:</h4>
-                  <a href="">@makoine_farms</a>
+                  <a href="https://www.instagram.com/makoine_farms/">@makoine_farms</a>
                 </div>
               </div><!-- End Info Item -->
 

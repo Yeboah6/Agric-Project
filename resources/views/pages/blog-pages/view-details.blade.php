@@ -51,22 +51,25 @@
                                     <h1>{{ $detail -> blog_id }}</h1>
                                     <br>
                                     <br>
+                                    <h4 class="mt-0">{{ $detail -> title}}</h4>
                                     <br>
-                                    <br>
-                                    {{-- <h6 class="text-muted">{{ $detail -> author}}</h6> --}}
-                                    <h3 class="mt-0">{{ $detail -> author}} <a href="javascript: void(0);" class="text-muted"><i class="mdi mdi-square-edit-outline ml-2"></i></a> </h3>
+                                    <h5 class="mt-0"><span>Author: </span>{{ $detail -> author}} </h5>
+                                    {{-- <h3 class="mt-0">{{ $detail -> title}} </h3> --}}
                                     <p class="mb-1">Added Date: {{ $detail -> created_at->format('F d, Y')}}</p>
                                 </form>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mt-4">
+                                    {{-- <h6>{{ $detail -> title }}</h6> --}}
                                     <h6>Message:</h6>
                                     <p>{{ $detail -> message }} </p>
-
+<br>
+<br>
+<br>
                                     @if($detail -> video)
                                         <blockquote>
                                           <video width="620" height="240" controls>
-                                              <source src="{{ asset($detail -> video) }}" type="video/mp4">
+                                              <source src="{{ asset('uploads/blog-videos/' . $detail -> video) }}" type="video/mp4">
                                               Your browser does not support the video tag.
                                           </video>
                                         </blockquote>

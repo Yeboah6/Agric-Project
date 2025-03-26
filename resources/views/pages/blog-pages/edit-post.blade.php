@@ -68,7 +68,7 @@
                                          @if($edit && $edit -> video)
                                             <!-- Show the preview of the uploaded image -->
                                             <video width="420" height="240" controls>
-                                              <source src="{{ asset($edit -> video) }}" type="video/mp4">
+                                              <source src="{{ asset('uploads/blog-videos/' . $edit -> video) }}" type="video/mp4">
                                               Your browser does not support the video tag.
                                             </video>
                                         @endif

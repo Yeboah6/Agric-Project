@@ -34,16 +34,12 @@
                         <h5>Blogs List</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row align-items-center m-l-0">
-                            <div class="col-sm-6">
-                            </div>
                             @if (Session::has('success'))
                                 <div class="alert alert-success" style="text-align: center;">{{ Session::get('success') }}</div>
                             @endif
                             @if (Session::has('fail'))
                                 <div class="alert alert-danger" style="text-align: center;">{{ Session::get('fail') }}</div>
                             @endif
-                        </div>
                         <div class="table-responsive">
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
@@ -61,7 +57,7 @@
                                         @foreach ($blogs as $blog)
                                             <tr>
                                                 <td>{{ $blog -> blog_id}}</td>
-                                                <td style="text-align: center"><img src="{{ asset('../uploads/blog-images/'.$blog -> image) }}" alt="Applicant_image" style="border-radius:20px;height:60px;"></td>
+                                                <td style="text-align: center"><img src="{{ asset('../uploads/blog-images/'.$blog -> image) }}" alt="Applicant_image" style="height:60px;"></td>
                                                 <td>{{ $blog -> author}}</td>
                                                 <td>{{ $blog -> title}}</td>
                                                 <td>{{ \Illuminate\Support\Str::limit($blog->message, 55, '...') }}</td>
@@ -78,7 +74,6 @@
                     </div>
                 </div>
             </div>
-            <!-- subscribe end -->
         </div>
         <!-- [ Main Content ] end -->
     </div>

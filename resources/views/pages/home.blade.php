@@ -4,48 +4,6 @@
 
 @include('includes.header')
 
-<!-- CSS for Modal & Zoom Effect -->
-<style>
-  /* Modal Styles */
-  .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-  }
-
-  .modal-content {
-      display: block;
-      max-width: 80%;
-      max-height: 80%;
-      margin: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-  }
-
-  .modal-content:hover {
-      transform: translate(-50%, -50%) scale(1.1);
-  }
-
-  .close {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
-  }
-</style>
-
-
 
   <main class="main">
 
@@ -244,7 +202,6 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
-        {{-- <p>Necessitatibus eius consequatur</p> --}}
       </div><!-- End Section Title -->
 
       <div class="services-carousel-wrap">
@@ -305,6 +262,48 @@
                   });
               });
           </script>
+
+          <!-- CSS for Modal & Zoom Effect -->
+          <style>
+            /* Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.8);
+            }
+          
+            .modal-content {
+                display: block;
+                max-width: 80%;
+                max-height: 80%;
+                margin: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 10px;
+                transition: transform 0.3s ease-in-out;
+            }
+          
+            .modal-content:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+          
+            .close {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+            }
+          </style>
+
             <button class="navigation-prev js-custom-prev">
               <i class="bi bi-arrow-left-short"></i>
             </button>
@@ -352,7 +351,8 @@
           </div>
         </div>
       </div>
-    </section><!-- /Services 2 Section -->
+    </section>
+    <!-- /Services 2 Section -->
 
       <!-- Zoom-in Modal -->
       <div id="zoomModal" class="modal">

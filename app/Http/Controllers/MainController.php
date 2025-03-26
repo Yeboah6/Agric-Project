@@ -16,7 +16,7 @@ class MainController extends Controller
 {
     // Display Home Page Function
     public function home() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -26,7 +26,7 @@ class MainController extends Controller
 
     // Display About Page Function
     public function about() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -36,7 +36,7 @@ class MainController extends Controller
 
     // Display Services Page Function
     public function services() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -46,7 +46,7 @@ class MainController extends Controller
 
     // Display Testimonials Page Function
     public function testimonials() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -56,7 +56,7 @@ class MainController extends Controller
 
     // Display Contact Page Function
     public function contact() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -75,16 +75,15 @@ class MainController extends Controller
 
         try {
             Mail::to($validateData['email'])->send(new ContactMail($validateData));
-    
-            return response()->json(['success' => true, 'message' => 'Message sent successfully!']);
+            return response() -> json(['success' => true, 'message' => 'Message sent successfully!']);
         } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => 'Failed to send message. Please try again.']);
+            return response() -> json(['success' => false, 'message' => 'Failed to send message. Please try again.']);
         }
     }
 
     // Display Blog Page Function
     public function blog() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -103,17 +102,17 @@ class MainController extends Controller
         $blogDetails = Blog::findOrFail($id);
     
         // Get only the comments that belong to this blog post
-        $comments = Comments::where('post_id', $blogDetails->id)->get();
-        $commentcount = Comments::where('post_id', $blogDetails->id)->count();
+        $comments = Comments::where('post_id', $blogDetails -> id) -> get();
+        $commentcount = Comments::where('post_id', $blogDetails -> id) -> count();
     
-        $recentPost = Blog::latest()->limit(5)->get(); // Get the latest 5 posts
+        $recentPost = Blog::latest() -> limit(5) -> get(); // Get the latest 5 posts
     
         return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost', 'data', 'comments', 'commentcount'));
     }    
 
     // Dislpay Add Post Page Function
     public function addPost() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -127,7 +126,7 @@ class MainController extends Controller
             'author' => 'required|string',
             'title' => 'required|string',
             'image' => 'nullable|file|mimes:jpeg,png,jpg,svg|max:5048',
-            'video' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:10240', // 10MB max
+            'video' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:40240', // 40MB max
             'message' => 'required|string',
         ]);
 
@@ -154,10 +153,10 @@ class MainController extends Controller
 
         if ($request->hasFile('video')) {
             $file = $request->file('video');
-            $fileName = 'VID_' . time() . '.' . $file->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/blog-videos/');
+            $fileName = 'VID_' . time() . '.' . $file -> getClientOriginalExtension();
+            $destinationPath = public_path().'/uploads/blog-videos/';
             $file->move($destinationPath, $fileName);
-            $post->video = 'uploads/blog-videos/' . $fileName; // Save relative path
+            $post->video = $fileName; // Save relative path
         }
 
         $post -> save();
@@ -166,25 +165,28 @@ class MainController extends Controller
 
     // Display Dashboard Page Function
     public function dashboard() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
 
         $posted = Blog::all() -> count();
         $customers = Customer::all() -> count();
+        $comments = Comments::all() -> count();
+        $recentPost = Blog::latest() -> limit(5) -> get(); // Get the latest 5 posts
 
-        return view('pages.dashboard', compact('data', 'posted', 'customers'));
+        return view('pages.dashboard', compact('data', 'posted', 'customers', 'comments', 'recentPost'));
     }
 
     // Display Posts Page Function
     public function blogs() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
 
-        $blogs = Blog::all();
+        // Fetch paginated blog posts (10 per page)
+        $blogs = Blog::paginate(10);
 
         return view('pages.blogs', compact('data', 'blogs'));
     }
@@ -197,9 +199,17 @@ class MainController extends Controller
         return redirect('/blogs') -> with('success', 'Post Deleted Successfully');
     }
 
+    // Delete Customer Function
+    public function deleteCustomer($id) {
+        $delete = Customer::findOrFail($id);
+
+        $delete -> delete();
+        return redirect('/customers') -> with('success', 'Post Deleted Successfully');
+    }
+
     // Display View Details Page Function
     public function viewDetails($id) {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -211,7 +221,7 @@ class MainController extends Controller
 
     // Display Edit Post Page Function
     public function editPost($id) {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -227,7 +237,7 @@ class MainController extends Controller
             'author' => 'required|string',
             'title' => 'required|string',
             'image' => 'nullable|file|mimes:jpeg,png,jpg,svg|max:5048',
-            'video' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:10240', // 10MB max
+            'video' => 'nullable|file|mimes:mp4,mov,avi,wmv|max:40240', // 40MB max
             'message' => 'required|string',
         ]);
 
@@ -250,19 +260,37 @@ class MainController extends Controller
 
         if ($request -> hasFile('video')) {
             $file = $request -> file('video');
-            $fileName = 'VID_' . time() . '.' . $file->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/blog-videos/');
+            $fileName = 'VID_' . time() . '.' . $file -> getClientOriginalExtension();
+            $destinationPath = public_path().'/uploads/blog-videos/';
             $file -> move($destinationPath, $fileName);
-            $edit -> video = 'uploads/blog-videos/' . $fileName; // Save relative path
+            $edit -> video = $fileName; // Save relative path
         }
 
         $edit -> update();
         return redirect('/blogs') -> with('success', 'Post Updated Successfully');
     }
 
+    // Display Edit Customers Page Function
+    public function editCustomer(Request $request, $id) {
+        $validateData = $request -> validate([
+            'name' => 'required|string',
+            'email' => 'required|email'
+        ]);
+
+        $updateCustomer = Customer::findOrFail($id);
+
+        $updateCustomer -> fill([
+            'name' => $validateData['name'],
+            'email' => $validateData['email']
+        ]);
+
+        $updateCustomer -> update();
+        return redirect('/customers') -> with('success', 'Customer Updated Successfully');
+    }
+
     // Display Customers Page Function
     public function customer() {
-        $data = array();
+        $data = [];
         if (Session::has('loginId')) {
             $data = Login::where('id', '=', Session::get('loginId'))->first();
         }
@@ -297,21 +325,24 @@ class MainController extends Controller
         $latestBlog = Blog::latest()->first();
 
          // Ensure there is a blog post to send
-    if (!$latestBlog) {
-        return "No blog post available.";
-    }
+        if (!$latestBlog) {
+            return "No blog post available.";
+        }
 
-    // Ensure the `$details` array contains required keys
-    $blog = [
-        'title'   => $latestBlog->title ?? 'Untitled',
-        'image'   => !empty($latestBlog->image) ? asset($latestBlog->image) : null, // Ensure image is included
-        'author'  => $latestBlog->author ?? 'Unknown Author',
-    ];
+        // Ensure the `$details` array contains required keys
+        $blog = [
+            'title'   => $latestBlog -> title ?? 'Untitled',
+            'image'   => !empty($latestBlog -> image) ? asset($latestBlog->image) : null, // Ensure image is included
+            'author'  => $latestBlog -> author ?? 'Unknown Author',
+            'message'  => $latestBlog -> message ?? 'No Message',
+        ];
 
-    // dd($customers);
-    Mail::to($customers) -> send(new Newsletter($blog));
+        foreach ($customers as $customer) {
+            Mail::to($customer)
+            -> send(new Newsletter($blog));
+        }
 
-    return redirect('/customers') -> with('success', 'Email has Successfully been sent');
+        return redirect('/customers') -> with('success', 'Email has Successfully been sent');
     
     }
 
