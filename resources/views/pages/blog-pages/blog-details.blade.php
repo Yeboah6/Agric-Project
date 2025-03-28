@@ -23,6 +23,18 @@
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
       }
+      .ser-vid {
+        width: 620px; 
+        height:240px;
+      }
+
+      @media screen and (max-width: 700px) {
+      .ser-vid {
+        width: 310px;
+        height: 240px;
+        margin-left: -15px;
+        }
+      }
     </style>
 
 
@@ -79,7 +91,7 @@
                   <br>
                   @if($blogDetails -> video)
                     <blockquote>
-                      <video width="620" height="240" controls>
+                      <video class="ser-vid" controls>
                           <source src="{{ asset('uploads/blog-videos/' . $blogDetails -> video) }}" type="video/mp4">
                           Your browser does not support the video tag.
                       </video>
@@ -229,24 +241,6 @@
         <div class="col-lg-4 sidebar">
 
           <div class="widgets-container">
-
-            <!-- Blog Author Widget -->
-            <div class="blog-author-widget widget-item">
-
-              {{-- <div class="d-flex flex-column align-items-center">
-                <div class="d-flex align-items-center w-100">
-                  <div>
-                    <h4>{{ $blogDetails -> author}}</h4>
-                  </div>
-                </div>
-              </div> --}}
-
-            </div><!--/Blog Author Widget -->
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
             <!-- Recent Posts Widget 2 -->
             <div class="recent-posts-widget-2 widget-item">
 

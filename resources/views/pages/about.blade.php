@@ -4,6 +4,72 @@
 
 @include('includes.header')
 
+<style>
+        /* Base image styles */
+        .service-item-content {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .service-item-content img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect */
+        .service-item-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        /* Zoom modal styles */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            display: block;
+            width: auto;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .zoom-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .service-item-content {
+                margin: 5px;
+            }
+        }
+    </style>
+
   <main class="main">
 
     <!-- Page Title -->
@@ -277,6 +343,131 @@
           </div>
         </div>
       </div>
+    </section><!-- /Services Section -->
+
+
+    <section id="services" class="services section">
+      <div class="content">
+          <div class="container">
+              <div class="row g-0">
+                  <!-- Image Columns -->
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image44.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image31.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image22.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image39.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image32.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image16.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image27.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="service-item-content" onclick="openZoomModal(this)">
+                          <img src="assets/img/image52.jpg" alt="Image" class="img-fluid">
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="service-item-content" onclick="openZoomModal(this)">
+                        <img src="assets/img/image5.jpg" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="service-item-content" onclick="openZoomModal(this)">
+                      <img src="assets/img/image20.jpg" alt="Image" class="img-fluid" style="height: 190px;">
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="service-item-content" onclick="openZoomModal(this)">
+                    <img src="assets/img/image21.jpg" alt="Image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="service-item-content" onclick="openZoomModal(this)">
+                  <img src="assets/img/image12.jpg" alt="Image" class="img-fluid">
+              </div>
+          </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Zoom Modal -->
+      <div id="zoomModal" class="zoom-modal">
+          <span class="zoom-close" onclick="closeZoomModal()">&times;</span>
+          <img class="zoom-modal-content" id="zoomedImage">
+      </div>
+  </section>
+
+  <script>
+      function openZoomModal(element) {
+          // Get the modal and the image
+          const modal = document.getElementById('zoomModal');
+          const modalImg = document.getElementById('zoomedImage');
+          
+          // Set the modal image source to the clicked image
+          modalImg.src = element.querySelector('img').src;
+          
+          // Display the modal
+          modal.style.display = 'flex';
+      }
+
+      function closeZoomModal() {
+          // Hide the modal
+          document.getElementById('zoomModal').style.display = 'none';
+      }
+
+      // Close the modal if user clicks outside the image
+      window.onclick = function(event) {
+          const modal = document.getElementById('zoomModal');
+          if (event.target === modal) {
+              modal.style.display = 'none';
+          }
+      }
+  </script>
+    <!-- End of Picture Section Title -->
+
+     <!-- Services Section -->
+     <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>EXECUTIVE SUMMARY</h2>
+        <p>
+          Makoine Foods and Farms Ltd is a Ghanaian agribusiness dedicated to revolutionizing 
+          the grains industry by empowering smallholder farmers and advancing food security. 
+          Through innovative agricultural practices, tailored capacity-building programs, and a 
+          steadfast commitment to sustainable development, the company strives to enhance 
+          livelihoods and foster economic growth. By adhering to stringent regulatory standards 
+          and cultivating strong partnerships with both local and global stakeholders, Makoine 
+          Foods and Farms Ltd is uniquely positioned to expand its footprint and drive impactful 
+          change across Africa and the international agribusiness sector.
+        </p>
+      </div>
+      <!-- End Section Title -->
     </section><!-- /Services Section -->
 
     <!-- Call To Action Section -->

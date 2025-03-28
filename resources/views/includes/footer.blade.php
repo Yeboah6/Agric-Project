@@ -11,7 +11,7 @@
     top: 70px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     .setting {
       top: 30px;
       left: 0;
@@ -51,10 +51,11 @@
             <h4>Useful Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="about">About us</a></li>
-              <li><a href="services">Services</a></li>
-              <li><a href="testimonials">Testimonials</a></li>
-              <li><a href="contact">Contact</a></li>
+              <li><a href="/about">About us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/testimonials">Testimonials</a></li>
+              <li><a href="/blog">Blogs</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
 
@@ -73,7 +74,7 @@
 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
           <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href="https://www.instagram.com/makoine_farms/"><i class="bi bi-instagram"></i></a>
         </div>
 
       </div>

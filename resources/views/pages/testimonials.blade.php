@@ -58,6 +58,46 @@
     </section>
     <!-- /Testimonials Section -->
 
+    <!-- About 3 Section -->
+    <section id="about-3" class="about-3 section">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between align-items-center">
+          <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+            <img src="assets/img/image35.jpg" alt="Image" class="img-fluid" style="border-radius: 15px;">
+          </div>
+          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="content-title mb-4" style="text-align:center">COMPLIANCE AND REGULATORY AFFILIATIONS</h2>
+            <p class="mb-4">
+              Makoine Foods and Farms Ltd maintains strong relationships with key regulatory 
+              institutions, underscoring our commitment to excellence and compliance. These 
+              affiliations not only enhance our credibility but also ensure that our operations meet both Makoine Foods and Farms Ltd maintains strong relationships with key regulatory 
+              institutions, underscoring our commitment to excellence and compliance. 
+            </p>
+            <p class="mb-4">
+              These affiliations not only enhance our credibility but also ensure that our operations meet both 
+              local and international standards. Through these partnerships, we adhere to best 
+              practices in sustainable agriculture, quality assurance, and ethical production, 
+              positioning us as a trusted leader in the agribusiness sector.
+            </p>
+            <strong>Local Affiliations</strong>
+            <ul>
+              <li>Ghana Grain Council (GGC)</li>
+              <li>Ghana Export Promotion Council (GEPC)</li>
+              <li>Ministry of Food and Agriculture (MoFA)</li>
+            </ul>
+            <strong>Global Affiliations</strong>
+            <ul>
+              <li>Food and Agriculture Organization (FAO)</li>
+              <li>International Organization for Standardization (ISO 9001 & 14001) </li>
+              <li>Good Agricultural Practices (GAP) certification bodies</li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 3 Section -->
+
     <!-- Call To Action Section -->
     @include('includes.blog-letter')
     <!-- /Call To Action Section -->

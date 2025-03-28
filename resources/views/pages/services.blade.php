@@ -6,19 +6,91 @@
 
 <style>
 
+.services .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between video items */
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Individual Video Wrapper */
+        .video-wrapper {
+            position: relative;
+            width: calc(25% - 20px); /* Responsive width with gap consideration */
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .video-wrapper {
+                width: calc(33.333% - 20px); /* 3 videos per row on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-wrapper {
+                width: calc(50% - 20px); /* 2 videos per row on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-wrapper {
+                width: 100%; /* 1 video per row on extra small screens */
+            }
+        }
+
+        /* Hover and Interactive Effects */
+        .video-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .vid2 {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .video-wrapper:hover .video-overlay {
+            opacity: 1;
+        }
+
   .ser-vid {
     width: 620px; 
     height:240px;
     margin-left: -80px;
   }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 700px) {
   .ser-vid {
-    width: 460px; 
-    height:240px;
-    margin-left: -0;
-  }
-  }
+    width: 375px; 
+    height: 240px;
+    margin-left: -5px;
+    }
+}
 
 </style>
 
@@ -175,7 +247,7 @@
               </h2>
               <div class="row my-5">
                 <div class="col-lg-12 d-flex align-items-start mb-4">
-                  <i class="bi bi-cloud-rain me-4 display-6"></i>
+                  <i class="bi bi-shop me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Proven Impact</h4>
                     <p class="text-white opacity-50">With over 470 farmers already supported, we have achieved 
@@ -186,7 +258,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start mb-4">
-                  <i class="bi bi-heart me-4 display-6"></i>
+                  <i class="bi bi-shop me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Diverse Operations</h4>
                     <p class="text-white opacity-50">Our expertise spans across grains production, livestock 
@@ -477,6 +549,221 @@ modal.style.display = "none";
 });
 </script>
         <!-- /Services 2 Section -->
+
+
+        <section id="services" class="services section">
+          <div class="content">
+            <div class="container">
+              <div class="row g-0">
+                      <!-- Video Columns with Wrapper -->
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video1.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video2.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video7.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                        <div class="video-overlay">Play Video</div>
+                        <video class="vid2" controls>
+                            <source src="assets/img/video11.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video9.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video8.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video20.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video19.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                    </div>
+                    <div class="row g-0">
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video10.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video5.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video6.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                      <div class="col-lg-3 col-md-6 video-wrapper">
+                          <div class="video-overlay">Play Video</div>
+                          <video class="vid2" controls>
+                              <source src="assets/img/video3.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                          </video>
+                      </div>
+                  </div>
+                  <div class="row g-0">
+                    <div class="col-lg-3 col-md-6 video-wrapper">
+                        <div class="video-overlay">Play Video</div>
+                        <video class="vid2" controls>
+                            <source src="assets/img/video17.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="col-lg-3 col-md-6 video-wrapper">
+                        <div class="video-overlay">Play Video</div>
+                        <video class="vid2" controls>
+                            <source src="assets/img/video13.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="col-lg-3 col-md-6 video-wrapper">
+                        <div class="video-overlay">Play Video</div>
+                        <video class="vid2" controls>
+                            <source src="assets/img/video14.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="col-lg-3 col-md-6 video-wrapper">
+                        <div class="video-overlay">Play Video</div>
+                        <video class="vid2" controls>
+                            <source src="assets/img/video16.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                </div>
+              </div>
+          </div>
+      </section>
+
+        <!-- About Section -->
+    {{-- <section id="about" class="about section"> --}}
+
+      {{-- <div class="content"> --}}
+        {{-- <div class="container"> --}}
+          {{-- <div class="row"> --}}
+              {{-- <div class="col-lg-6 mb-4 mb-lg-0"> --}}
+                {{-- <video class="ser-vid" controls> --}}
+                  {{-- <source src="assets/img/video11.mp4" type="video/mp4"> --}}
+                  {{-- Your browser does not support the video tag. --}}
+                {{-- </video> --}}
+            {{-- </div> --}}
+{{--              --}}
+            {{-- <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100"> --}}
+              {{-- <h3 class="content-subtitle text-white opacity-50">STRATEGIC PILLARS</h3> --}}
+              {{-- {{-- <h2 class="content-title mb-4"> --}}
+                {{-- <strong>STRATEGIC PILLARS</strong>  --}}
+              {{-- </h2> --}} 
+              {{-- <div class="row my-5"> --}}
+                {{-- <div class="col-lg-12 d-flex align-items-start mb-4"> --}}
+                  {{-- <i class="bi bi-shop me-4 display-6"></i> --}}
+                  {{-- <div> --}}
+                    {{-- <h4 class="m-0 h5 text-white">Farmer Empowerment</h4> --}}
+                    {{-- <p class="text-white opacity-50">Providing tools, training, and resources to  --}}
+                      {{-- smallholder farmers to enhance productivity and income. --}}
+                      {{-- <br> --}}
+                      {{-- <span style="font-weight:500;color:#fff;">a. Access to subsidized inputs such as seeds and fertilizers.</span> --}}
+                      {{-- <br> --}}
+                      {{-- <span style="font-weight:300">b. Training on modern farming techniques and financial management.</span>  --}}
+                      {{-- {{-- This demonstrates our ability to create tangible benefits for smallholder farmers and  --}}
+                      {{-- establish sustainable agricultural models. --}}
+                    {{-- </p> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- <div class="col-lg-12 d-flex align-items-start mb-4"> --}}
+                  {{-- <i class="bi bi-shop me-4 display-6"></i> --}}
+                  {{-- <div> --}}
+                    {{-- <h4 class="m-0 h5 text-white">Diverse Operations</h4> --}}
+                    {{-- <p class="text-white opacity-50">Our expertise spans across grains production, livestock  --}}
+                      {{-- farming, and agro chemical exports. This diversified portfolio ensures resilience  --}}
+                      {{-- against market fluctuations and provides multiple revenue streams for long-term  --}}
+                      {{-- growth.</p> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- <div class="col-lg-12 d-flex align-items-start"> --}}
+                  {{-- <i class="bi bi-shop me-4 display-6"></i> --}}
+                  {{-- <div> --}}
+                    {{-- <h4 class="m-0 h5 text-white">Sustainability Focus</h4> --}}
+                    {{-- <p class="text-white opacity-50">We prioritize environmental stewardship by employing  --}}
+                      {{-- innovative farming practices that reduce ecological footprints. From organic  --}}
+                      {{-- fertilizers to water-efficient techniques, we are committed to sustainable  --}}
+                      {{-- solutions that balance productivity with conservation. --}}
+                    {{-- </p> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- <div class="col-lg-12 d-flex align-items-start"> --}}
+                  {{-- <i class="bi bi-shop me-4 display-6"></i> --}}
+                  {{-- <div> --}}
+                    {{-- <h4 class="m-0 h5 text-white">Strong Partnerships</h4> --}}
+                    {{-- <p class="text-white opacity-50">Collaborating with leading research institutions, NGOs,  --}}
+                      {{-- and government bodies allows us to integrate global best practices into our  --}}
+                      {{-- operations. These partnerships strengthen our technical capabilities and  --}}
+                      {{-- enhance our outreach efforts. --}}
+                    {{-- </p> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- <div class="col-lg-12 d-flex align-items-start"> --}}
+                  {{-- <i class="bi bi-shop me-4 display-6"></i> --}}
+                  {{-- <div> --}}
+                    {{-- <h4 class="m-0 h5 text-white">Market Reach</h4> --}}
+                    {{-- <p class="text-white opacity-50">With a strategic focus on both regional and global expansion,  --}}
+                      {{-- we ensure that our products meet international standards of quality and reliability.  --}}
+                      {{-- This enables us to access new markets while building a reputation as a trusted supplier. --}}
+                    {{-- </p> --}}
+                  {{-- </div> --}}
+                {{-- </div> --}}
+              {{-- </div> --}}
+            {{-- </div> --}}
+          {{-- </div> --}}
+        {{-- </div> --}}
+      {{-- </div> --}}
+    {{-- </section><!-- /About Section --> --}}
+
 
     <!-- Call To Action Section -->
     @include('includes.blog-letter')

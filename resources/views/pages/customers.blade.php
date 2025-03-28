@@ -100,16 +100,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('customer.update', $customer -> id) }}" method="POST">
+                        <form action="{{ route('customer.update', $customer->id) }}" method="POST">
                             @csrf
-                            <input type="text" name="id" id="edit-id">
+                            @method('PUT')
+                            <input type="hidden" name="id" id="edit-id" value="{{ $customer->id }}">
                             <div class="form-group">
                                 <label for="edit-name">Name</label>
-                                <input type="text" name="name" class="form-control" id="edit-name" required>
+                                <input type="text" name="name" class="form-control" id="edit-name" 
+                                       value="{{ $customer->name }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="edit-email">Email</label>
-                                <input type="email" name="email" class="form-control" id="edit-email" required>
+                                <input type="email" name="email" class="form-control" id="edit-email" 
+                                       value="{{ $customer->email }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>

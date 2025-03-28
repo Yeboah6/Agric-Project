@@ -98,14 +98,10 @@
             </div>
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <h3 class="content-subtitle text-white opacity-50">OUR SUCCESS METRICS</h3>
-              {{-- <h2 class="content-title mb-4">
-                More than <strong>50 year experience</strong> in agriculture
-                industry
-              </h2> --}}
 
               <div class="row my-5">
                 <div class="col-lg-12 d-flex align-items-start mb-4">
-                  <i class="bi bi-cloud-rain me-4 display-6"></i>
+                  <i class="bi bi-shop me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Empowering Farmers</h4>
                     <p class="text-white opacity-50">
@@ -118,7 +114,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12 d-flex align-items-start mb-4">
-                  <i class="bi bi-heart me-4 display-6"></i>
+                  <i class="bi bi-shop me-4 display-6"></i>
                   <div>
                     <h4 class="m-0 h5 text-white">Market Leadership</h4>
                     <p class="text-white opacity-50">
@@ -198,168 +194,166 @@
     </section><!-- /About 3 Section -->
 
     <!-- Services 2 Section -->
-    <section id="services-2" class="services-2 section dark-background">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-      </div><!-- End Section Title -->
+ <section id="services-2" class="services-2 section dark-background">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Services</h2>
+    {{-- <p>Necessitatibus eius consequatur</p> --}}
+  </div><!-- End Section Title -->
 
-      <div class="services-carousel-wrap">
-        <div class="container">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "navigation": {
-                  "nextEl": ".js-custom-next",
-                  "prevEl": ".js-custom-prev"
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 1,
-                    "spaceBetween": 40
-                  },
-                  "1200": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 40
-                  }
-                }
+  <div class="services-carousel-wrap">
+    <div class="container">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "navigation": {
+              "nextEl": ".js-custom-next",
+              "prevEl": ".js-custom-prev"
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 40
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "spaceBetween": 40
               }
-            </script>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", function () {
-                  const modal = document.getElementById("zoomModal");
-                  const modalImg = document.getElementById("zoomedImage");
-                  const zoomableImages = document.querySelectorAll(".zoomable");
-                  const closeBtn = document.querySelector(".close");
-          
-                  zoomableImages.forEach(img => {
-                      img.addEventListener("click", function () {
-                          modal.style.display = "block";
-                          modalImg.src = this.src;
-                      });
-                  });
-          
-                  closeBtn.addEventListener("click", function () {
-                      modal.style.display = "none";
-                  });
-          
-                  modal.addEventListener("click", function (event) {
-                      if (event.target === modal) {
-                          modal.style.display = "none";
-                      }
-                  });
-              });
-          </script>
-
-          <!-- CSS for Modal & Zoom Effect -->
-          <style>
-            /* Modal Styles */
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.8);
             }
-          
-            .modal-content {
-                display: block;
-                max-width: 80%;
-                max-height: 80%;
-                margin: auto;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                border-radius: 10px;
-                transition: transform 0.3s ease-in-out;
-            }
-          
-            .modal-content:hover {
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-          
-            .close {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-                color: white;
-                font-size: 30px;
-                cursor: pointer;
-            }
-          </style>
-
-            <button class="navigation-prev js-custom-prev">
-              <i class="bi bi-arrow-left-short"></i>
-            </button>
-            <button class="navigation-next js-custom-next">
-              <i class="bi bi-arrow-right-short"></i>
-            </button>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image19.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image36.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image43.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image38.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image39.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image25.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="service-item">
-                  <img src="assets/img/image12.jpg" alt="Image" class="img-fluid" style="border-radius: 10px;cursor: pointer;">
-                </div>
-              </div>
+          }
+        </script>
+        <button class="navigation-prev js-custom-prev">
+          <i class="bi bi-arrow-left-short"></i>
+        </button>
+        <button class="navigation-next js-custom-next">
+          <i class="bi bi-arrow-right-short"></i>
+        </button>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="service-item">
+              {{-- <img src="assets/img/image8.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;"> --}}
+              <img src="assets/img/image19.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
             </div>
-            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image36.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image43.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image38.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image39.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image25.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="service-item">
+              <img src="assets/img/image12.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
+            </div>
           </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
-    </section>
-    <!-- /Services 2 Section -->
+    </div>
+  </div>
+</section>
 
-      <!-- Zoom-in Modal -->
-      <div id="zoomModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="zoomedImage">
-      </div>
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
 
+    <!-- CSS for Modal -->
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+
+    <!-- JavaScript for Image Popup -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      // Get the modal
+      var modal = document.getElementById('imageModal');
+      var modalImg = document.getElementById('modalImage');
+      var closeBtn = document.getElementsByClassName('close')[0];
+      
+      // Get all images with the service-image class
+      var images = document.getElementsByClassName('service-image');
+    
+      // Add click event to each image
+      for (var i = 0; i < images.length; i++) {
+        images[i].onclick = function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        }
+      }
+
+      // Close the modal when the close button is clicked
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // Close the modal when clicking outside the image
+      modal.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    });
+    </script>
       <!-- Services Section -->
 
     <!-- Call To Action Section -->

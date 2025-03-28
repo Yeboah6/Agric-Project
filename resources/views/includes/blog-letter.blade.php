@@ -44,16 +44,9 @@
                           
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-secondary px-4 sub-btn">Subcribe</button> 
+                    <button type="submit" class="btn btn-secondary px-4 sub-btn">SUBSCRIBE</button> 
                   </div>
                 </div>
-
-                
-                {{-- <div class="loading">Loading</div> --}}
-                {{-- <div class="error-message"></div> --}}
-                {{-- <div class="sent-message">
-                  Your subscription request has been sent. Thank you!
-                </div> --}}
               </form>
             </div>
           </div>

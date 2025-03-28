@@ -16,6 +16,19 @@
         background-color: #f9f9f9;
     }
 
+.ser-vid {
+  width: 620px; 
+  height:240px;
+}
+
+@media screen and (max-width: 700px) {
+    .ser-vid {
+      width: 340px; 
+      height: 240px;
+      margin-left: -7px;
+    }
+}
+
 </style>
 
 <!-- [ Main Content ] start -->
@@ -67,7 +80,7 @@
 <br>
                                          @if($edit && $edit -> video)
                                             <!-- Show the preview of the uploaded image -->
-                                            <video width="420" height="240" controls>
+                                            <video class="ser-vid" controls>
                                               <source src="{{ asset('uploads/blog-videos/' . $edit -> video) }}" type="video/mp4">
                                               Your browser does not support the video tag.
                                             </video>

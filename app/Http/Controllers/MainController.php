@@ -11,6 +11,7 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 
 class MainController extends Controller
 {
@@ -271,21 +272,28 @@ class MainController extends Controller
     }
 
     // Display Edit Customers Page Function
-    public function editCustomer(Request $request, $id) {
-        $validateData = $request -> validate([
-            'name' => 'required|string',
-            'email' => 'required|email'
+    public function updateCustomer(Request $request, $id) {
+        // Find the specific customer by ID
+        $customer = Customer::findOrFail($id);
+    
+        // Validate the input with a unique email rule that excludes the current customer's email
+        $validateData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => [
+                'required', 
+                'email', 
+                Rule::unique('customers', 'email')->ignore($customer->id)
+            ]
         ]);
-
-        $updateCustomer = Customer::findOrFail($id);
-
-        $updateCustomer -> fill([
+    
+        // Update only the specific customer's data
+        $customer->update([
             'name' => $validateData['name'],
             'email' => $validateData['email']
         ]);
-
-        $updateCustomer -> update();
-        return redirect('/customers') -> with('success', 'Customer Updated Successfully');
+    
+        return redirect()->route('customers.index')
+            ->with('success', 'Customer updated successfully');
     }
 
     // Display Customers Page Function

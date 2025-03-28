@@ -5,6 +5,23 @@
 @include('includes.admin-sidenav')
 	
 @include('includes.admin-header')
+
+<style>
+
+    .ser-vid {
+      width: 620px; 
+      height:240px;
+    }
+  
+  @media screen and (max-width: 700px) {
+    .ser-vid {
+      width: 340px; 
+      height: 240px;
+      margin-left: -7px;
+    }
+}
+  
+  </style>
 	
 <!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
@@ -68,7 +85,7 @@
 <br>
                                     @if($detail -> video)
                                         <blockquote>
-                                          <video width="620" height="240" controls>
+                                          <video class="ser-vid" controls>
                                               <source src="{{ asset('uploads/blog-videos/' . $detail -> video) }}" type="video/mp4">
                                               Your browser does not support the video tag.
                                           </video>
