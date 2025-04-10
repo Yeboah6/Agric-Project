@@ -4,12 +4,35 @@
 
 @include('includes.header')
 
+
+
+<style>
+  .container .test {
+    font-size: 6rem;
+}
+  @media (max-width: 550px) {
+      .container .test {
+      font-size: 3.5rem;
+    }
+
+    .testimonial-words {
+      padding: 25px;
+    }
+  }
+
+    @media (max-width: 450px) {
+      .container .test {
+      font-size: 3rem;
+    }
+  }
+</style>
+
   <main class="main">
 
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1 style="font-size: 5rem;">TESTIMONIALS</h1>
+        <h1 class="test">TESTIMONIALS</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
@@ -29,7 +52,7 @@
       <div class="testimonial-wrap">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 mb-4 mb-md-4">
+            <div class="col-md-6 mb-4 mb-md-4 testimonial-words">
               <div class="testimonial">
                 <blockquote>
                   <p>
@@ -41,7 +64,7 @@
                 <p class="client-name">Smallholder Farmer, <br> Atebubu Amantin Municipality.</p>
               </div>
             </div>
-            <div class="col-md-6 mb-4 mb-md-4">
+            <div class="col-md-6 mb-4 mb-md-4 testimonial-words">
               <div class="testimonial">
                 <blockquote>
                   <p>
@@ -66,7 +89,7 @@
           <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
             <img src="assets/img/image35.jpg" alt="Image" class="img-fluid" style="border-radius: 15px;">
           </div>
-          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 order-lg-1 testimonial-words" data-aos="fade-up" data-aos-delay="100">
             <h2 class="content-title mb-4" style="text-align:center">COMPLIANCE AND REGULATORY AFFILIATIONS</h2>
             <p class="mb-4">
               Makoine Foods and Farms Ltd maintains strong relationships with key regulatory 
@@ -96,7 +119,8 @@
           </div>
         </div>
       </div>
-    </section><!-- /About 3 Section -->
+    </section>
+    <!-- /About 3 Section -->
 
     <!-- Call To Action Section -->
     @include('includes.blog-letter')

@@ -6,7 +6,8 @@
 
 <style>
 
-.services .row {
+        .services 
+         .row1 {
             display: flex;
             flex-wrap: wrap;
             gap: 20px; /* Space between video items */
@@ -83,14 +84,71 @@
     margin-left: -80px;
   }
 
+          /* CSS with updated color scheme */
+        .why-choose-us {
+          /* background-color: #116530; */
+          color: white;
+          padding: 60px 0;
+        }
+        .why-choose-us h2 {
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: #000;
+        }
+        .emoji-icon {
+          margin-top: 10px;
+        }
+        .tagline {
+          text-align: center;
+          font-size: 1.2rem;
+          line-height: 1.6;
+          color: white;
+        }
+        .benefit-card {
+          background-color: black;
+          border-radius: 10px;
+          padding: 25px;
+          height: 100%;
+        }
+        .number {
+          font-size: .9rem;
+          font-weight: bold;
+          margin-bottom: 15px;
+          color: white;
+        }
+        .benefit-title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 15px;
+          color: white;
+        }
+        .benefit-description {
+          font-size: .9rem;
+          line-height: 1.5;
+          color: white;
+        }
 
-@media screen and (max-width: 700px) {
-  .ser-vid {
-    width: 375px; 
-    height: 240px;
-    margin-left: -5px;
-    }
-}
+        .container .test {
+          font-size: 5rem;
+        }
+
+
+        @media screen and (max-width: 550px) {
+          .ser-vid {
+            width: 475px; 
+            height: 240px;
+            margin-left: -5px;
+            }
+
+            .testimonial-words {
+              padding: 25px;
+            }
+
+            .container .test {
+              font-size: 3rem;
+            }
+        }
 
 </style>
 
@@ -99,7 +157,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1 style="font-size: 5rem;">SERVICES</h1>
+        <h1 class="test">SERVICES</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
@@ -107,7 +165,8 @@
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -117,17 +176,21 @@
         <h2>SERVICES</h2>
         <p>Providing Fresh Produce Every Single Day</p>
       </div><!-- End Section Title -->
-      <div class="content">
+
+      <section class="why-choose-us section" id="why-choose-us">
+        <!-- Section Title -->
         <div class="container">
-          <div class="row g-0">
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">01</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Integrated Agro-input Solutions</h3>
-                  <p>
+              <h2 style="text-align: center">Our Team of Experts</h2>
+        </div>
+        <!-- End Section Title -->
+        <div class="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">01</h3>
+                  <h4 class="benefit-title">Integrated Agro-input Solutions</h4>
+                  <p class="benefit-description">
                     Supplying high-quality fertilizers, 
                     certified seeds, and agro-chemicals while offering expert guidance on their 
                     effective use. This ensures farmers have the necessary tools to achieve optimal 
@@ -135,15 +198,11 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">02</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Farmer Training and Capacity Building</h3>
-                  <p>
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">02</h3>
+                  <h4 class="benefit-title">Farmer Training and Capacity Building</h4>
+                  <p class="benefit-description">
                     Organizing comprehensive 
                     training programs that focus on modern farming practices, financial literacy, and 
                     the adoption of sustainable agricultural techniques. These programs empower 
@@ -151,33 +210,24 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">03</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Market Access and Pricing Support</h3>
-                  <p>
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">03</h3>
+                  <h4 class="benefit-title">Market Access and Pricing Support</h4>
+                  <p class="benefit-description">
                     Facilitating connections between 
                     farmers and profitable markets, both locally and internationally, while providing 
                     pricing advisory services to ensure fair compensation for their produce.
-                    <br>
-                    <br>
-                    <br>
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">04</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Logistics and Advisory Services</h3>
-                  <p>
+            <div class="row">
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">04</h3>
+                  <h4 class="benefit-title">Logistics and Advisory Services</h4>
+                  <p class="benefit-description">
                     Offering end-to-end logistics solutions, 
                     including transportation and distribution of farm produce, to minimize post-harvest losses. 
                     Additionally, providing real-time crop monitoring and tailored 
@@ -185,34 +235,22 @@
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">05</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Livestock & Aquaculture Production</h3>
-                  <p>
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">05</h3>
+                  <h4 class="benefit-title">Livestock & Aquaculture Production</h4>
+                  <p class="benefit-description">
                     Operating diverse farming ventures 
                     including catfish, snails, and poultry production. These ventures complement 
                     crop farming and create additional income streams.
-                    <br>
-                    <br>
-                    <br>
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="service-item">
-                <span class="number">06</span>
-                <div class="service-item-icon">
-                </div>
-                <div class="service-item-content">
-                  <h3 class="service-heading">Crop Production and Export Services</h3>
-                  <p>
+              <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                  <h3 class="number">06</h3>
+                  <h4 class="benefit-title">Crop Production and Export Services</h4>
+                  <p class="benefit-description">
                     Specializing in cultivating and 
                     exporting maize, rice, soybeans, sorghum, and millet. With a focus on meeting 
                     international quality standards, we ensure market competitiveness and expanded 
@@ -223,8 +261,9 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+        </section>
     <!-- /Services Section -->
 
     <!-- About Section -->
@@ -313,7 +352,7 @@
         <h2>STRATEGIC GROWTH ROADMAP</h2>
       </div><!-- End Section Title -->
 
-      <div class="testimonial-wrap">
+      <div class="testimonial-wrap testimonial-words">
         <div class="container">
           <div class="row">
             <div class="col-md-6 mb-4 mb-md-4">
@@ -554,7 +593,7 @@ modal.style.display = "none";
         <section id="services" class="services section">
           <div class="content">
             <div class="container">
-              <div class="row g-0">
+              <div class="row1 g-0">
                       <!-- Video Columns with Wrapper -->
                       <div class="col-lg-3 col-md-6 video-wrapper">
                           <div class="video-overlay">Play Video</div>
@@ -586,7 +625,7 @@ modal.style.display = "none";
                         </video>
                     </div>
                     </div>
-                    <div class="row g-0">
+                    <div class="row1 g-0">
                       <div class="col-lg-3 col-md-6 video-wrapper">
                           <div class="video-overlay">Play Video</div>
                           <video class="vid2" controls>
@@ -616,7 +655,7 @@ modal.style.display = "none";
                           </video>
                       </div>
                     </div>
-                    <div class="row g-0">
+                    <div class="row1 g-0">
                       <div class="col-lg-3 col-md-6 video-wrapper">
                           <div class="video-overlay">Play Video</div>
                           <video class="vid2" controls>
@@ -646,7 +685,7 @@ modal.style.display = "none";
                           </video>
                       </div>
                   </div>
-                  <div class="row g-0">
+                  <div class="row1 g-0">
                     <div class="col-lg-3 col-md-6 video-wrapper">
                         <div class="video-overlay">Play Video</div>
                         <video class="vid2" controls>

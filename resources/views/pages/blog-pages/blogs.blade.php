@@ -60,7 +60,7 @@
                                                 <td style="text-align: center"><img src="{{ asset('../uploads/blog-images/'.$blog -> image) }}" alt="Applicant_image" style="height:60px;"></td>
                                                 <td>{{ $blog -> author}}</td>
                                                 <td>{{ $blog -> title}}</td>
-                                                <td>{{ \Illuminate\Support\Str::limit($blog->message, 55, '...') }}</td>
+                                                <td>{{ \Illuminate\Support\Str::limit($blog->message, 40, '...') }}</td>
                                                 <td>
                                                     <a href="{{ url ('/view-details/'.$blog -> id)}}" class="btn btn-warning btn-sm">View</a>
                                                     <a href="{{ url ('/edit-post/'.$blog -> id)}}" class="btn btn-info btn-sm">Edit</a>

@@ -31,8 +31,8 @@ class ContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Mail',
-            from: new Address('yeboahsolomon483@gmail.com', "New Email From Customer")
+            subject: 'New Email From Customer',
+            from: new Address('yeboahsolomon483@gmail.com', "Makoine Foods and Farms LTD")
         );
     }
 

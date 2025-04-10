@@ -6,9 +6,19 @@
 
 <style>
 
-.text-area {
-  height: 250px;
-}
+  .container .test {
+    font-size: 5rem;
+  }
+
+  .text-area {
+    height: 250px;
+  }
+
+  @media (max-width: 768px) {
+      .container .test {
+      font-size: 3rem;
+    }
+  }
 
 </style>
 
@@ -17,7 +27,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1>Contact</h1>
+        <h1 class="test">Contact</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
@@ -69,7 +79,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Call:</h4>
-                  <p> +233 55 340 0073 <br> +233 24 475 8130 <br> +233 24 352 2962 </p>
+                  <a href="tel:+233 55 340 0073"><p> +233 55 340 0073 </a><br> <a href="tel:+233 24 475 8130"><p> +233 24 475 8130 </a> <br><a href="tel:+233 24 352 2962"><p> +233 24 352 2962 </a></p>
                 </div>
               </div><!-- End Info Item -->
 

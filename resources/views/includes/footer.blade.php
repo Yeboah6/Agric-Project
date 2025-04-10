@@ -68,7 +68,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div>
-            © Copyright. All Rights Reserved
+           © 2025 KEKStudios.
           </div>
         </div>
 

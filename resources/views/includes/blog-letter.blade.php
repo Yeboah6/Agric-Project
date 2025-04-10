@@ -4,7 +4,7 @@
     margin-left: 140px;
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 550px) {
     .sub-btn{
     margin-left: 190px;
     }
@@ -34,17 +34,17 @@
                 <div class="row sub-input">
                   <div class="col-sm-6">
                     <div class="form-group  align-items-stretch">
-                      <input type="text" name="name" class="form-control h-100" placeholder="Enter your name">
+                      <input type="text" name="name" class="form-control h-100" placeholder="Enter your name" style="border-radius: 5px;">
                     </div>
                   </div>
 
                   <div class="col-sm-6">
                     <div class="form-group d-flex align-items-stretch">
-                      <input type="email" name="email" class="form-control h-100" placeholder="Enter your e-mail">
+                      <input type="email" name="email" class="form-control h-100" placeholder="Enter your e-mail" style="border-radius: 5px;">
                           
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-secondary px-4 sub-btn">SUBSCRIBE</button> 
+                    <button type="submit" class="btn btn-secondary px-4 sub-btn" style="border-radius: 5px;">SUBSCRIBE</button> 
                   </div>
                 </div>
               </form>

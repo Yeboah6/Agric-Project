@@ -35,6 +35,17 @@
         margin-left: -15px;
         }
       }
+
+      .container .test {
+        font-size: 5rem;
+      }
+
+      @media (max-width: 550px) {
+        .container .test {
+          font-size: 3rem;
+        }
+      }
+      
     </style>
 
 
@@ -43,7 +54,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade" style="background-image: url(../assets/img/image31.jpg);">
       <div class="container position-relative">
-        <h1 style="font-size: 5rem;">BLOG DETAILS</h1>
+        <h1 class="test">BLOG DETAILS</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>

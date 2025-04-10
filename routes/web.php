@@ -38,10 +38,10 @@ Route::get('/view-details/{id}', [MainController::class, 'viewDetails']) -> name
 Route::get('/edit-post/{id}', [MainController::class, 'editPost']) -> name('edit-post');
 Route::post('/edit-post/{id}', [MainController::class, 'saveEditPost']) -> name('edit-post');
 
-Route::put('/customers/{id}', [MainController::class, 'updateCustomer'])
-    ->name('customer.update');
+Route::post('/customers/{id}', [MainController::class, 'updateCustomer']) -> name('customer');
 
 Route::get('/customers', [MainController::class, 'customer']) -> name('customers') -> middleware('isLoggedIn');
+Route::get('/customers/{id}', [MainController::class, 'customers']) -> name('customers') -> middleware('isLoggedIn');
 
 Route::post('/subscribe', [MainController::class, 'subscribe']) -> name('subscribe');
 

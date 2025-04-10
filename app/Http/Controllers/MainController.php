@@ -90,7 +90,7 @@ class MainController extends Controller
         }
 
         $blogs = Blog::all();
-        return view('pages.blog-pages.blog', compact('blogs', 'data'));
+        return view('pages.blog', compact('blogs', 'data'));
     }
 
     // Display Blog Details Page Function
@@ -108,7 +108,7 @@ class MainController extends Controller
     
         $recentPost = Blog::latest() -> limit(5) -> get(); // Get the latest 5 posts
     
-        return view('pages.blog-pages.blog-details', compact('blogDetails', 'recentPost', 'data', 'comments', 'commentcount'));
+        return view('pages.blog-details', compact('blogDetails', 'recentPost', 'data', 'comments', 'commentcount'));
     }    
 
     // Dislpay Add Post Page Function
@@ -189,10 +189,10 @@ class MainController extends Controller
         // Fetch paginated blog posts (10 per page)
         $blogs = Blog::paginate(10);
 
-        return view('pages.blogs', compact('data', 'blogs'));
+        return view('pages.blog-pages.blogs', compact('data', 'blogs'));
     }
 
-    // Delete Post Function
+    // Delete Specific Post Function
     public function deletePost($id) {
         $delete = Blog::findOrFail($id);
 
@@ -200,12 +200,12 @@ class MainController extends Controller
         return redirect('/blogs') -> with('success', 'Post Deleted Successfully');
     }
 
-    // Delete Customer Function
+    // Delete Specific Customer Function
     public function deleteCustomer($id) {
         $delete = Customer::findOrFail($id);
 
         $delete -> delete();
-        return redirect('/customers') -> with('success', 'Post Deleted Successfully');
+        return redirect('/customers') -> with('success', 'Customer Deleted Successfully');
     }
 
     // Display View Details Page Function
@@ -273,27 +273,20 @@ class MainController extends Controller
 
     // Display Edit Customers Page Function
     public function updateCustomer(Request $request, $id) {
-        // Find the specific customer by ID
-        $customer = Customer::findOrFail($id);
-    
-        // Validate the input with a unique email rule that excludes the current customer's email
-        $validateData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => [
-                'required', 
-                'email', 
-                Rule::unique('customers', 'email')->ignore($customer->id)
-            ]
+        $validateData = $request -> validate([
+            'name' => 'required|string',
+            'email' => 'required|string|email',
         ]);
-    
-        // Update only the specific customer's data
-        $customer->update([
+
+        $update = Customer::findOrFail($id);
+
+        $update -> fill([
             'name' => $validateData['name'],
             'email' => $validateData['email']
         ]);
-    
-        return redirect()->route('customers.index')
-            ->with('success', 'Customer updated successfully');
+
+        $update -> update();
+        return redirect('/customers')->with('success', 'Customer updated successfully');
     }
 
     // Display Customers Page Function
@@ -306,6 +299,18 @@ class MainController extends Controller
         $customers = Customer::all();
 
         return view('pages.customers', compact('data', 'customers'));
+    }
+
+    // Display Customers Edit Page Function
+    public function customers($id) {
+        $data = [];
+        if (Session::has('loginId')) {
+            $data = Login::where('id', '=', Session::get('loginId'))->first();
+        }
+
+        $customer = Customer::findOrFail($id);
+
+        return view('pages.edit-customer', compact('data','customer'));
     }
 
     // Subscribing to Newsletter Page Function
@@ -329,7 +334,7 @@ class MainController extends Controller
     // Send Newsletter To all Customers Function
     public function sendEmailNotification() {
         $customers = Customer::pluck('email')->toArray();
-        // $blog = Blog::all();
+        
         $latestBlog = Blog::latest()->first();
 
          // Ensure there is a blog post to send

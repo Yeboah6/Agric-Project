@@ -4,6 +4,30 @@
 
 @include('includes.header')
 
+<style>
+
+.carousel-container .carousel-words {
+  font-size: 5rem;
+  text-align:center;
+}
+
+
+  @media (max-width: 550px) {
+     .carousel-container .carousel-words {
+        font-size: 3rem;
+      }
+
+     .carousel-container .little {
+        font-size: 2.3rem;
+      }
+
+      .testimonial-words {
+        padding: 25px;
+      }
+  }
+
+</style>
+
 
   <main class="main">
 
@@ -15,44 +39,35 @@
         <div class="carousel-item active">
           <img src="assets/img/image4.jpg" alt="">
           <div class="carousel-container">
-            <h2 style="font-size: 5rem;text-align:center;">Makoine Foods and Farms</h2>
-            {{-- <p>Makoine Foods and Farms Ltd is a trailblazing agribusiness based in Ghana, passionately 
-              committed to transforming the grains industry. </p> --}}
+            <h2 class="carousel-words">Makoine Foods and Farms</h2>
           </div>
         </div><!-- End Carousel Item -->
 
         <div class="carousel-item">
           <img src="assets/img/image3.jpg" alt="">
           <div class="carousel-container">
-            <h2 style="font-size: 5rem;text-align:center;">Organic Food is good for health</h2>
-            {{-- <p>We specialize in empowering smallholder 
-              farmers through innovative farming techniques, capacity-building programs, and 
-              sustainable practices that uplift communities while enhancing food security. </p> --}}
+            <h2 class="carousel-words">Organic Food is good for health</h2>
           </div>
         </div><!-- End Carousel Item -->
 
         <div class="carousel-item">
           <img src="assets/img/image2.jpg" alt="">
           <div class="carousel-container">
-            <h2 style="font-size: 4.2rem;text-align:center;">Providing Fresh Produce Every Single Day</h2>
-            {{-- <p>With a strong focus on quality, we ensure that our products meet both local and international 
-              standards, positioning ourselves as leaders in the agricultural sector.</p> --}}
+            <h2 class="carousel-words little">Providing Fresh Produce Every Single Day</h2>
           </div>
         </div><!-- End Carousel Item -->
 
         <div class="carousel-item">
           <img src="assets/img/image29.jpg" alt="">
           <div class="carousel-container">
-            <h2 style="font-size: 4.6rem;text-align:center;">Farming as a Passione</h2>
-            {{-- <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius.</p> --}}
+            <h2 class="carousel-words">Farming as a Passione</h2>
           </div>
         </div><!-- End Carousel Item -->
 
         <div class="carousel-item">
           <img src="assets/img/image41.jpg" alt="">
           <div class="carousel-container">
-            <h2 style="font-size: 5rem;text-align:center;">Good Food For All</h2>
-            {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
+            <h2 class="carousel-words">Good Food For All</h2>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -74,9 +89,9 @@
     <section id="services" class="services section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title " data-aos="fade-up">
         <h2>WHO WE ARE</h2>
-        <p>Makoine Foods and Farms Ltd is a trailblazing agribusiness based in Ghana, passionately 
+        <p style="font-size: 24px;">Makoine Foods and Farms Ltd is a trailblazing agribusiness based in Ghana, passionately 
           committed to transforming the grains industry. We specialize in empowering smallholder 
           farmers through innovative farming techniques, capacity-building programs, and 
           sustainable practices that uplift communities while enhancing food security. With a 
@@ -172,15 +187,15 @@
           <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
             <img src="assets/img/image14.jpg" alt="Image" class="img-fluid" style="border-radius: 15px;">
           </div>
-          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 order-lg-1 testimonial-words" data-aos="fade-up" data-aos-delay="100">
             <h2 class="content-title mb-4">Plants Make Life Better</h2>
-            <p class="mb-4">
+            <p class="mb-4" style="line-height: 1.8;letter-spacing: .7px">
               Makoine Foods and Farms Ltd is steadfast in its mission to redefine agriculture in Ghana 
               and beyond. Through strategic investments in innovation, sustainability, and community 
               upliftment, we are tackling the challenges of food security while opening transformative 
               opportunities for thousands of farmers.
             </p>
-            <p class="mb-4">
+            <p class="mb-4" style="line-height: 1.8;letter-spacing: .7px">
               By fostering a resilient agricultural ecosystem built on cutting-edge technologies, eco-friendly practices, 
               and inclusive growth, we are paving the way for a prosperous and 
               sustainable future. We invite you to be part of this journey-shaping the future of 
@@ -191,14 +206,14 @@
           </div>
         </div>
       </div>
-    </section><!-- /About 3 Section -->
+    </section>
+    <!-- /About 3 Section -->
 
     <!-- Services 2 Section -->
  <section id="services-2" class="services-2 section dark-background">
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Services</h2>
-    {{-- <p>Necessitatibus eius consequatur</p> --}}
   </div><!-- End Section Title -->
 
   <div class="services-carousel-wrap">
@@ -242,7 +257,6 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="service-item">
-              {{-- <img src="assets/img/image8.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;"> --}}
               <img src="assets/img/image19.jpg" alt="Image" class="img-fluid service-image" style="border-radius: 10px;cursor: pointer;">
             </div>
           </div>
